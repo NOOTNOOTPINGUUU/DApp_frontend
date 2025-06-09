@@ -67,12 +67,61 @@
   const sectionTitle = figma.createText(); sectionTitle.name="Section Title"; sectionTitle.fontName={family:'Inter',style:'Bold'}; sectionTitle.characters="待審核預覽／下載申請 (Pending Requests)"; sectionTitle.fontSize=28; sectionTitle.fills=[{type:'SOLID',color:{r:0.1,g:0.1,b:0.2}}];
   const tableContainer = figma.createFrame(); tableContainer.name="Requests Table"; tableContainer.layoutMode='VERTICAL'; tableContainer.primaryAxisSizingMode='AUTO'; tableContainer.counterAxisSizingMode='FIXED'; tableContainer.resize(652,400); tableContainer.paddingTop=24; tableContainer.paddingLeft=24; tableContainer.paddingRight=24; tableContainer.paddingBottom=24; tableContainer.itemSpacing=0; tableContainer.cornerRadius=12; tableContainer.fills=[{type:'SOLID',color:{r:1,g:1,b:1}}]; tableContainer.strokes=[{type:'SOLID',color:{r:0.9,g:0.9,b:0.95}}]; tableContainer.strokeWeight=1;
   // Table Header
-  const tableHeader = figma.createFrame(); tableHeader.name="Table Header"; tableHeader.layoutMode='HORIZONTAL'; tableHeader.primaryAxisSizingMode='FIXED'; tableHeader.counterAxisSizingMode='AUTO'; tableHeader.resize(600,48); tableHeader.counterAxisAlignItems='CENTER'; tableHeader.paddingLeft=16; tableHeader.paddingRight=16; tableHeader.paddingTop=12; tableHeader.paddingBottom=12; tableHeader.fills=[{type:'SOLID',color:{r:0.98,g:0.98,b:1}}]; tableHeader.strokes=[{type:'SOLID',color:{r:0.9,g:0.9,b:0.95}}]; tableHeader.strokeWeight=1;
-  const cols=[{name:'ID',width:80},{name:'Testator DID',width:220},{name:'Version',width:100},{name:'Type',width:100},{name:'Reason',width:152}]; cols.forEach(c=>{ const cell=figma.createFrame(); cell.name=`Header ${c.name}`; cell.layoutMode='HORIZONTAL'; cell.primaryAxisSizingMode='FIXED'; cell.counterAxisSizingMode='AUTO'; cell.resize(c.width,24); cell.counterAxisAlignItems='CENTER'; cell.paddingLeft=8; cell.paddingRight=8; const txt=figma.createText(); txt.name='Header Text'; txt.fontName={family:'Inter',style:'Bold'}; txt.characters=c.name; txt.fontSize=14; txt.fills=[{type:'SOLID',color:{r:0.2,g:0.2,b:0.3}}]; cell.appendChild(txt); tableHeader.appendChild(cell);} );
+  const tableHeader = figma.createFrame(); tableHeader.name="Table Header"; tableHeader.layoutMode='HORIZONTAL'; tableHeader.primaryAxisSizingMode='FIXED'; tableHeader.counterAxisSizingMode='AUTO'; tableHeader.resize(652,48); tableHeader.counterAxisAlignItems='CENTER'; tableHeader.paddingLeft=16; tableHeader.paddingRight=16; tableHeader.paddingTop=12; tableHeader.paddingBottom=12; tableHeader.fills=[{type:'SOLID',color:{r:0.98,g:0.98,b:1}}]; tableHeader.strokes=[{type:'SOLID',color:{r:0.9,g:0.9,b:0.95}}]; tableHeader.strokeWeight=1;
+  const cols = [
+    {name: 'ID', width: 80},
+    {name: 'Testator DID', width: 220},
+    {name: 'Version', width: 100},
+    {name: 'Type', width: 100},
+    {name: 'Reason', width: 152}
+  ];
+  cols.forEach(c=>{ const cell=figma.createFrame(); cell.name=`Header ${c.name}`; cell.layoutMode='HORIZONTAL'; cell.primaryAxisSizingMode='FIXED'; cell.counterAxisSizingMode='AUTO'; cell.resize(c.width,24); cell.counterAxisAlignItems='CENTER'; cell.paddingLeft=8; cell.paddingRight=8; const txt=figma.createText(); txt.name='Header Text'; txt.fontName={family:'Inter',style:'Bold'}; txt.characters=c.name; txt.fontSize=14; txt.fills=[{type:'SOLID',color:{r:0.2,g:0.2,b:0.3}}]; cell.appendChild(txt); tableHeader.appendChild(cell);} );
   tableContainer.appendChild(tableHeader);
   // Sample Rows
   const sample = [ {id:'1',did:'did:ethr:0xBBB…',version:'2',type:'preview',reason:'查看預覽'}, {id:'2',did:'did:ethr:0xCCC…',version:'1',type:'download',reason:'下載原文'} ];
-  sample.forEach((r,i)=>{ const row=figma.createFrame(); row.name=`Row ${i+1}`; row.layoutMode='HORIZONTAL'; row.primaryAxisSizingMode='FIXED'; row.counterAxisSizingMode='AUTO'; row.resize(600,64); row.counterAxisAlignItems='CENTER'; row.paddingLeft=16; row.paddingRight=16; row.paddingTop=16; row.paddingBottom=16; row.fills=[{type:'SOLID',color:{r:1,g:1,b:1}}]; row.strokes=[{type:'SOLID',color:{r:0.9,g:0.9,b:0.95}}]; row.strokeWeight=1; [r.id,r.did,r.version,r.type,r.reason].forEach((val,idx)=>{ const w=cols[idx].width; const cell=figma.createFrame(); cell.name=`Cell ${cols[idx].name}`; cell.layoutMode='HORIZONTAL'; cell.primaryAxisSizingMode='FIXED'; cell.counterAxisSizingMode='AUTO'; cell.resize(w,32); cell.counterAxisAlignItems='CENTER'; cell.paddingLeft=8; cell.paddingRight=8; const t=figma.createText(); t.name=`${cols[idx].name} Text`; t.fontName={family:'Inter',style:idx<3?'Regular':'Medium'}; t.characters=val; t.fontSize=14; t.fills=[{type:'SOLID',color:{r:0.1,g:0.1,b:0.2}}]; cell.appendChild(t); row.appendChild(cell);} ); tableContainer.appendChild(row);} );
+  sample.forEach((r,i)=>{
+    const row = figma.createFrame();
+    row.name=`Row ${i+1}`;
+    row.layoutMode='HORIZONTAL';
+    row.primaryAxisSizingMode='FIXED';
+    row.counterAxisSizingMode='AUTO';
+    row.resize(652,64);
+    row.counterAxisAlignItems='CENTER';
+    row.paddingLeft=16;
+    row.paddingRight=16;
+    row.paddingTop=16;
+    row.paddingBottom=16;
+    row.fills=[{type:'SOLID',color:{r:1,g:1,b:1}}];
+    row.strokes=[{type:'SOLID',color:{r:0.9,g:0.9,b:0.95}}];
+    row.strokeWeight=1;
+    [r.id,r.did,r.version,r.type,r.reason].forEach((val,idx)=>{
+      const w=cols[idx].width;
+      const cell=figma.createFrame();
+      cell.name=`Cell ${cols[idx].name}`;
+      cell.layoutMode='HORIZONTAL';
+      cell.primaryAxisSizingMode='FIXED';
+      cell.counterAxisSizingMode='AUTO';
+      cell.resize(w,32);
+      cell.counterAxisAlignItems='CENTER';
+      cell.paddingLeft=8;
+      cell.paddingRight=8;
+      const t=figma.createText();
+      t.name=`${cols[idx].name} Text`;
+      t.fontName={family:'Inter',style:idx<3?'Regular':'Medium'};
+      // Truncate reason in table cell
+      if (idx === 4) {
+        const preview = val.length > 4 ? val.slice(0, 4) + '...' : val;
+        t.characters = preview;
+      } else {
+        t.characters = val;
+      }
+      t.fontSize=14;
+      t.fills=[{type:'SOLID',color:{r:0.1,g:0.1,b:0.2}}];
+      cell.appendChild(t);
+      row.appendChild(cell);
+    });
+    tableContainer.appendChild(row);
+  });
   reqSection.appendChild(sectionTitle); reqSection.appendChild(tableContainer);
 
   // Review Panel Section (copy pattern from Pending Bundles)
@@ -80,7 +129,78 @@
   const reviewTitle=figma.createText(); reviewTitle.name="Review Title"; reviewTitle.fontName={family:'Inter',style:'Bold'}; reviewTitle.characters="審核操作區"; reviewTitle.fontSize=24; reviewTitle.fills=[{type:'SOLID',color:{r:0.1,g:0.1,b:0.2}}];
   reviewPanel.appendChild(reviewTitle);
 
-  // Decision Section
+  // Info Card combining Request Info and full Reason
+  const infoCard = figma.createFrame();
+  infoCard.name = "Info Card";
+  infoCard.layoutMode = 'VERTICAL';
+  infoCard.primaryAxisSizingMode = 'FIXED';
+  infoCard.counterAxisSizingMode = 'FIXED';
+  infoCard.resize(636, 200);
+  infoCard.paddingTop = 16;
+  infoCard.paddingBottom = 16;
+  infoCard.paddingLeft = 16;
+  infoCard.paddingRight = 16;
+  infoCard.itemSpacing = 12;
+  infoCard.cornerRadius = 8;
+  infoCard.fills = [{type: 'SOLID', color: {r: 0.98, g: 0.98, b: 1}}];
+  infoCard.strokes = [{type: 'SOLID', color: {r: 0.9, g: 0.9, b: 0.95}}];
+  infoCard.strokeWeight = 1;
+  infoCard.overflowDirection = 'VERTICAL';
+  infoCard.overflow = 'SCROLL';
+
+  // Info Title
+  const infoTitle = figma.createText();
+  infoTitle.name = "Info Title";
+  infoTitle.fontName = {family: 'Inter', style: 'Bold'};
+  infoTitle.characters = "申請資訊";
+  infoTitle.fontSize = 18;
+  infoTitle.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
+
+  // Selected Request Text
+  const selectedRequestText = figma.createText();
+  selectedRequestText.name = "Selected Request";
+  selectedRequestText.fontName = {family:'Inter',style:'Medium'};
+  selectedRequestText.characters = "已選擇：ID 1";
+  selectedRequestText.fontSize = 16;
+  selectedRequestText.lineHeight = {unit: 'PIXELS', value: 20};
+  selectedRequestText.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
+
+  // Request Details Text
+  const requestDetails = figma.createText();
+  requestDetails.name = "Request Details";
+  requestDetails.fontName = {family:'Inter',style:'Regular'};
+  requestDetails.characters = "Testator DID: did:ethr:0xBBB…\n版本: 2\n類型: preview";
+  requestDetails.fontSize = 14;
+  requestDetails.lineHeight = {unit: 'PIXELS', value: 20};
+  requestDetails.fills = [{type: 'SOLID', color: {r: 0.4, g: 0.4, b: 0.5}}];
+
+  // Reason Label
+  const reasonLabel = figma.createText();
+  reasonLabel.name = "Reason Label";
+  reasonLabel.fontName = {family: 'Inter', style: 'Medium'};
+  reasonLabel.characters = "申請原因：";
+  reasonLabel.fontSize = 16;
+  reasonLabel.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
+
+  // Full Reason Content
+  const reasonContent = figma.createText();
+  reasonContent.name = "Reason Content";
+  reasonContent.fontName = {family: 'Inter', style: 'Regular'};
+  reasonContent.characters = "查看預覽 - 我需要查看這份遺囑的預覽版本以確認內容是否符合法律要求。申請原因包含多行文字，當內容較長時可以通過滑動來查看完整內容。這是一個示例較長的申請原因文字，用來測試滑動功能是否正常運作。"; // full reason text with longer content for testing scroll
+  reasonContent.fontSize = 14;
+  reasonContent.lineHeight = {unit: 'PIXELS', value: 20};
+  reasonContent.fills = [{type: 'SOLID', color: {r: 0.4, g: 0.4, b: 0.5}}];
+  reasonContent.textAutoResize = 'WIDTH_AND_HEIGHT';
+  reasonContent.resize(580, reasonContent.height);
+
+  infoCard.appendChild(infoTitle);
+  infoCard.appendChild(selectedRequestText);
+  infoCard.appendChild(requestDetails);
+  infoCard.appendChild(reasonLabel);
+  infoCard.appendChild(reasonContent);
+  reviewPanel.appendChild(infoCard);
+
+  // Review Decision Section
   const decisionSection = figma.createFrame();
   decisionSection.name = "Decision Section";
   decisionSection.layoutMode = 'VERTICAL';
@@ -96,59 +216,83 @@
   decisionSection.strokes = [{type: 'SOLID', color: {r: 0.9, g: 0.9, b: 0.95}}];
   decisionSection.strokeWeight = 1;
 
-  // Buttons
-  const buttonSection = figma.createFrame();
-  buttonSection.name = "Button Section";
-  buttonSection.layoutMode = 'HORIZONTAL';
-  buttonSection.primaryAxisSizingMode = 'AUTO';
-  buttonSection.counterAxisSizingMode = 'AUTO';
-  buttonSection.itemSpacing = 16;
+  const decisionTitle = figma.createText();
+  decisionTitle.name = "Decision Title";
+  decisionTitle.fontName = {family: 'Inter', style: 'Bold'};
+  decisionTitle.characters = "審核結果";
+  decisionTitle.fontSize = 18;
+  decisionTitle.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
 
-  const approveButton = figma.createFrame();
-  approveButton.name = "Approve Button";
-  approveButton.layoutMode = 'HORIZONTAL';
-  approveButton.primaryAxisSizingMode = 'AUTO';
-  approveButton.counterAxisSizingMode = 'AUTO';
-  approveButton.counterAxisAlignItems = 'CENTER';
-  approveButton.itemSpacing = 8;
-  approveButton.paddingTop = 14;
-  approveButton.paddingBottom = 14;
-  approveButton.paddingLeft = 24;
-  approveButton.paddingRight = 24;
-  approveButton.cornerRadius = 8;
-  approveButton.fills = [{type: 'SOLID', color: {r: 0.16, g: 0.74, b: 0.51}}];
+  // Radio Options
+  const radioOptions = figma.createFrame();
+  radioOptions.name = "Radio Options";
+  radioOptions.layoutMode = 'VERTICAL';
+  radioOptions.primaryAxisSizingMode = 'AUTO';
+  radioOptions.counterAxisSizingMode = 'AUTO';
+  radioOptions.itemSpacing = 12;
+
+  // Approve Option
+  const approveOption = figma.createFrame();
+  approveOption.name = "Approve Option";
+  approveOption.layoutMode = 'HORIZONTAL';
+  approveOption.primaryAxisSizingMode = 'AUTO';
+  approveOption.counterAxisSizingMode = 'AUTO';
+  approveOption.counterAxisAlignItems = 'CENTER';
+  approveOption.itemSpacing = 8;
+
+  const approveRadio = figma.createFrame();
+  approveRadio.name = "Approve Radio";
+  approveRadio.layoutMode = 'HORIZONTAL';
+  approveRadio.primaryAxisSizingMode = 'FIXED';
+  approveRadio.counterAxisSizingMode = 'FIXED';
+  approveRadio.resize(16, 16);
+  approveRadio.cornerRadius = 8;
+  approveRadio.fills = [{type: 'SOLID', color: {r: 1, g: 1, b: 1}}];
+  approveRadio.strokes = [{type: 'SOLID', color: {r: 0.16, g: 0.74, b: 0.51}}];
+  approveRadio.strokeWeight = 2;
+
   const approveText = figma.createText();
   approveText.name = "Approve Text";
   approveText.fontName = {family: 'Inter', style: 'Medium'};
-  approveText.characters = "同意";
+  approveText.characters = "同意申請 (Approve Request)";
   approveText.fontSize = 16;
-  approveText.fills = [{type: 'SOLID', color: {r: 1, g: 1, b: 1}}];
-  approveButton.appendChild(approveText);
+  approveText.fills = [{type: 'SOLID', color: {r: 0.16, g: 0.74, b: 0.51}}];
 
-  const rejectButton = figma.createFrame();
-  rejectButton.name = "Reject Button";
-  rejectButton.layoutMode = 'HORIZONTAL';
-  rejectButton.primaryAxisSizingMode = 'AUTO';
-  rejectButton.counterAxisSizingMode = 'AUTO';
-  rejectButton.counterAxisAlignItems = 'CENTER';
-  rejectButton.itemSpacing = 8;
-  rejectButton.paddingTop = 14;
-  rejectButton.paddingBottom = 14;
-  rejectButton.paddingLeft = 24;
-  rejectButton.paddingRight = 24;
-  rejectButton.cornerRadius = 8;
-  rejectButton.fills = [{type: 'SOLID', color: {r: 0.9, g: 0.9, b: 0.95}}];
+  approveOption.appendChild(approveRadio);
+  approveOption.appendChild(approveText);
+
+  // Reject Option
+  const rejectOption = figma.createFrame();
+  rejectOption.name = "Reject Option";
+  rejectOption.layoutMode = 'HORIZONTAL';
+  rejectOption.primaryAxisSizingMode = 'AUTO';
+  rejectOption.counterAxisSizingMode = 'AUTO';
+  rejectOption.counterAxisAlignItems = 'CENTER';
+  rejectOption.itemSpacing = 8;
+
+  const rejectRadio = figma.createFrame();
+  rejectRadio.name = "Reject Radio";
+  rejectRadio.layoutMode = 'HORIZONTAL';
+  rejectRadio.primaryAxisSizingMode = 'FIXED';
+  rejectRadio.counterAxisSizingMode = 'FIXED';
+  rejectRadio.resize(16, 16);
+  rejectRadio.cornerRadius = 8;
+  rejectRadio.fills = [{type: 'SOLID', color: {r: 1, g: 1, b: 1}}];
+  rejectRadio.strokes = [{type: 'SOLID', color: {r: 0.9, g: 0.9, b: 0.95}}];
+  rejectRadio.strokeWeight = 2;
+
   const rejectText = figma.createText();
   rejectText.name = "Reject Text";
   rejectText.fontName = {family: 'Inter', style: 'Regular'};
-  rejectText.characters = "拒絕";
+  rejectText.characters = "拒絕申請 (Reject Request)";
   rejectText.fontSize = 16;
   rejectText.fills = [{type: 'SOLID', color: {r: 0.4, g: 0.4, b: 0.5}}];
-  rejectButton.appendChild(rejectText);
 
-  buttonSection.appendChild(approveButton);
-  buttonSection.appendChild(rejectButton);
-  decisionSection.appendChild(buttonSection);
+  rejectOption.appendChild(rejectRadio);
+  rejectOption.appendChild(rejectText);
+
+  radioOptions.appendChild(approveOption);
+  radioOptions.appendChild(rejectOption);
 
   // Remark Field
   const remarkField = figma.createFrame();
@@ -157,12 +301,14 @@
   remarkField.primaryAxisSizingMode = 'AUTO';
   remarkField.counterAxisSizingMode = 'AUTO';
   remarkField.itemSpacing = 8;
+
   const remarkLabel = figma.createText();
   remarkLabel.name = "Remark Label";
   remarkLabel.fontName = {family: 'Inter', style: 'Medium'};
-  remarkLabel.characters = "不通過原因 (notaryRemark)：";
+  remarkLabel.characters = "備註 (如果選「拒絕申請」，請填寫原因)：";
   remarkLabel.fontSize = 14;
   remarkLabel.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
+
   const remarkTextarea = figma.createFrame();
   remarkTextarea.name = "Remark Textarea";
   remarkTextarea.layoutMode = 'HORIZONTAL';
@@ -170,46 +316,61 @@
   remarkTextarea.counterAxisSizingMode = 'FIXED';
   remarkTextarea.resize(600, 80);
   remarkTextarea.paddingTop = 12;
-  remarkTextarea.paddingBottom = 12;
   remarkTextarea.paddingLeft = 12;
   remarkTextarea.paddingRight = 12;
+  remarkTextarea.paddingBottom = 12;
   remarkTextarea.cornerRadius = 6;
   remarkTextarea.fills = [{type: 'SOLID', color: {r: 0.98, g: 0.98, b: 1}}];
   remarkTextarea.strokes = [{type: 'SOLID', color: {r: 0.9, g: 0.9, b: 0.95}}];
   remarkTextarea.strokeWeight = 1;
+
   const remarkPlaceholder = figma.createText();
   remarkPlaceholder.name = "Remark Placeholder";
   remarkPlaceholder.fontName = {family: 'Inter', style: 'Regular'};
-  remarkPlaceholder.characters = "請填寫不通過原因...";
+  remarkPlaceholder.characters = "請填寫審核備註...";
   remarkPlaceholder.fontSize = 14;
   remarkPlaceholder.fills = [{type: 'SOLID', color: {r: 0.6, g: 0.6, b: 0.65}}];
+
   remarkTextarea.appendChild(remarkPlaceholder);
   remarkField.appendChild(remarkLabel);
   remarkField.appendChild(remarkTextarea);
-  decisionSection.appendChild(remarkField);
 
-  // Confirm Reject Button
-  const confirmRejectButton = figma.createFrame();
-  confirmRejectButton.name = "Confirm Reject Button";
-  confirmRejectButton.layoutMode = 'HORIZONTAL';
-  confirmRejectButton.primaryAxisSizingMode = 'AUTO';
-  confirmRejectButton.counterAxisSizingMode = 'AUTO';
-  confirmRejectButton.counterAxisAlignItems = 'CENTER';
-  confirmRejectButton.itemSpacing = 8;
-  confirmRejectButton.paddingTop = 14;
-  confirmRejectButton.paddingBottom = 14;
-  confirmRejectButton.paddingLeft = 24;
-  confirmRejectButton.paddingRight = 24;
-  confirmRejectButton.cornerRadius = 8;
-  confirmRejectButton.fills = [{type: 'SOLID', color: {r: 0.55, g: 0.36, b: 1}}];
-  const confirmRejectText = figma.createText();
-  confirmRejectText.name = "Confirm Reject Text";
-  confirmRejectText.fontName = {family: 'Inter', style: 'Medium'};
-  confirmRejectText.characters = "確認拒絕";
-  confirmRejectText.fontSize = 16;
-  confirmRejectText.fills = [{type: 'SOLID', color: {r: 1, g: 1, b: 1}}];
-  confirmRejectButton.appendChild(confirmRejectText);
-  decisionSection.appendChild(confirmRejectButton);
+  // Submit Button
+  const submitButton = figma.createFrame();
+  submitButton.name = "Submit Decision Button";
+  submitButton.layoutMode = 'HORIZONTAL';
+  submitButton.primaryAxisSizingMode = 'AUTO';
+  submitButton.counterAxisSizingMode = 'AUTO';
+  submitButton.counterAxisAlignItems = 'CENTER';
+  submitButton.itemSpacing = 8;
+  submitButton.paddingTop = 14;
+  submitButton.paddingBottom = 14;
+  submitButton.paddingLeft = 24;
+  submitButton.paddingRight = 24;
+  submitButton.cornerRadius = 8;
+  submitButton.fills = [{type: 'SOLID', color: {r: 0.55, g: 0.36, b: 1}}];
+
+  const submitIcon = figma.createNodeFromSvg(`
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+      <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      <path d="M21 12c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z" fill="white"/>
+    </svg>
+  `);
+
+  const submitText = figma.createText();
+  submitText.name = "Submit Text";
+  submitText.fontName = {family: 'Inter', style: 'Bold'};
+  submitText.characters = "提交審核結果";
+  submitText.fontSize = 16;
+  submitText.fills = [{type: 'SOLID', color: {r: 1, g: 1, b: 1}}];
+
+  submitButton.appendChild(submitIcon);
+  submitButton.appendChild(submitText);
+
+  decisionSection.appendChild(decisionTitle);
+  decisionSection.appendChild(radioOptions);
+  decisionSection.appendChild(remarkField);
+  decisionSection.appendChild(submitButton);
 
   reviewPanel.appendChild(decisionSection);
 
@@ -222,7 +383,27 @@
   dashboard.appendChild(mainContent);
 
   // Footer
-  const footer = figma.createFrame(); footer.name="Footer"; footer.layoutMode='HORIZONTAL'; footer.primaryAxisSizingMode='FIXED'; footer.counterAxisSizingMode='AUTO'; footer.resize(1440,80); footer.primaryAxisAlignItems='CENTER'; footer.counterAxisAlignItems='CENTER'; footer.paddingLeft=32; footer.paddingRight=32; footer.fills=[{type:'SOLID',color:{r:0.95,g:0.95,b:0.97}}]; const fText=figma.createText(); fText.name="Footer Text"; fText.fontName={family:'Inter',style:'Regular'}; fText.characters="© 2025 Digital Will DApp - Notary Portal"; fText.fontSize=14; fText.fills=[{type:'SOLID',color:{r:0.4,g:0.4,b:0.5}}]; footer.appendChild(fText); dashboard.appendChild(footer);
+  const footer = figma.createFrame();
+  footer.name = "Footer";
+  footer.layoutMode = 'HORIZONTAL';
+  footer.primaryAxisSizingMode = 'FIXED';
+  footer.counterAxisSizingMode = 'AUTO';
+  footer.resize(1440, 80);
+  footer.primaryAxisAlignItems = 'CENTER';
+  footer.counterAxisAlignItems = 'CENTER';
+  footer.paddingLeft = 32;
+  footer.paddingRight = 32;
+  footer.fills = [{type: 'SOLID', color: {r: 0.95, g: 0.95, b: 0.97}}];
+  
+  const fText = figma.createText();
+  fText.name = "Footer Text";
+  fText.fontName = {family: 'Inter', style: 'Regular'};
+  fText.characters = "© 2025 Digital Will DApp - Notary Portal";
+  fText.fontSize = 14;
+  fText.fills = [{type: 'SOLID', color: {r: 0.4, g: 0.4, b: 0.5}}];
+  
+  footer.appendChild(fText);
+  dashboard.appendChild(footer);
 
   figma.currentPage.appendChild(dashboard);
 })(); 

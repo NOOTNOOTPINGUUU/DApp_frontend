@@ -1,7 +1,8 @@
 (async () => {
-  await figma.loadFontAsync({family: 'Inter', style: 'Regular'});
-  await figma.loadFontAsync({family: 'Inter', style: 'Medium'});
-  await figma.loadFontAsync({family: 'Inter', style: 'Bold'});
+  // Load Inter font family
+  await figma.loadFontAsync({ family: 'Inter', style: 'Regular' });
+  await figma.loadFontAsync({ family: 'Inter', style: 'Medium' });
+  await figma.loadFontAsync({ family: 'Inter', style: 'Bold' });
 
   // Main Dashboard Frame
   const dashboard = figma.createFrame();
@@ -9,8 +10,8 @@
   dashboard.layoutMode = 'VERTICAL';
   dashboard.primaryAxisSizingMode = 'FIXED';
   dashboard.counterAxisSizingMode = 'FIXED';
-  dashboard.resize(1440, 1104);
-  dashboard.fills = [{type: 'SOLID', color: {r: 0.97, g: 0.98, b: 1}}];
+  dashboard.resize(1440, 1024);
+  dashboard.fills = [{ type: 'SOLID', color: { r: 0.97, g: 0.98, b: 1 } }];
   dashboard.itemSpacing = 0;
 
   // Header Section
@@ -26,11 +27,11 @@
   header.paddingRight = 32;
   header.paddingTop = 16;
   header.paddingBottom = 16;
-  header.fills = [{type: 'SOLID', color: {r: 1, g: 1, b: 1}}];
-  header.strokes = [{type: 'SOLID', color: {r: 0.9, g: 0.9, b: 0.95}}];
+  header.fills = [{ type: 'SOLID', color: { r: 1, g: 1, b: 1 } }];
+  header.strokes = [{ type: 'SOLID', color: { r: 0.9, g: 0.9, b: 0.95 }, opacity: 1 }];
   header.strokeWeight = 1;
 
-  // Logo and User Info
+  // Logo Section
   const logoSection = figma.createFrame();
   logoSection.name = "Logo Section";
   logoSection.layoutMode = 'HORIZONTAL';
@@ -46,13 +47,14 @@
   `);
   const logoText = figma.createText();
   logoText.name = "Logo Text";
-  logoText.fontName = {family: 'Inter', style: 'Bold'};
+  logoText.fontName = { family: 'Inter', style: 'Bold' };
   logoText.characters = "數位遺囑系統 — Notary";
   logoText.fontSize = 20;
-  logoText.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
+  logoText.fills = [{ type: 'SOLID', color: { r: 0.1, g: 0.1, b: 0.2 } }];
   logoSection.appendChild(logoIcon);
   logoSection.appendChild(logoText);
 
+  // User Info Section
   const userSection = figma.createFrame();
   userSection.name = "User Section";
   userSection.layoutMode = 'HORIZONTAL';
@@ -62,10 +64,10 @@
   userSection.itemSpacing = 16;
   const walletInfo = figma.createText();
   walletInfo.name = "Wallet Info";
-  walletInfo.fontName = {family: 'Inter', style: 'Medium'};
+  walletInfo.fontName = { family: 'Inter', style: 'Medium' };
   walletInfo.characters = "已連結錢包：did:ethr:0xNotaryXYZ…";
   walletInfo.fontSize = 14;
-  walletInfo.fills = [{type: 'SOLID', color: {r: 0.4, g: 0.4, b: 0.5}}];
+  walletInfo.fills = [{ type: 'SOLID', color: { r: 0.4, g: 0.4, b: 0.5 } }];
   const logoutButton = figma.createFrame();
   logoutButton.name = "Logout Button";
   logoutButton.layoutMode = 'HORIZONTAL';
@@ -77,13 +79,13 @@
   logoutButton.paddingLeft = 16;
   logoutButton.paddingRight = 16;
   logoutButton.cornerRadius = 6;
-  logoutButton.fills = [{type: 'SOLID', color: {r: 0.95, g: 0.95, b: 0.97}}];
+  logoutButton.fills = [{ type: 'SOLID', color: { r: 0.95, g: 0.95, b: 0.97 } }];
   const logoutText = figma.createText();
   logoutText.name = "Logout Text";
-  logoutText.fontName = {family: 'Inter', style: 'Medium'};
+  logoutText.fontName = { family: 'Inter', style: 'Medium' };
   logoutText.characters = "登出";
   logoutText.fontSize = 14;
-  logoutText.fills = [{type: 'SOLID', color: {r: 0.4, g: 0.4, b: 0.5}}];
+  logoutText.fills = [{ type: 'SOLID', color: { r: 0.4, g: 0.4, b: 0.5 } }];
   logoutButton.appendChild(logoutText);
   userSection.appendChild(walletInfo);
   userSection.appendChild(logoutButton);
@@ -104,8 +106,8 @@
   topNav.paddingTop = 16;
   topNav.paddingBottom = 16;
   topNav.itemSpacing = 32;
-  topNav.fills = [{type: 'SOLID', color: {r: 0.99, g: 0.99, b: 1}}];
-  topNav.strokes = [{type: 'SOLID', color: {r: 0.9, g: 0.9, b: 0.95}}];
+  topNav.fills = [{ type: 'SOLID', color: { r: 0.99, g: 0.99, b: 1 } }];
+  topNav.strokes = [{ type: 'SOLID', color: { r: 0.9, g: 0.9, b: 0.95 }, opacity: 1 }];
   topNav.strokeWeight = 1;
   const navItems = [
     { name: "待審核上傳遺囑", active: false },
@@ -128,108 +130,160 @@
     navItem.paddingRight = 16;
     navItem.cornerRadius = 6;
     if (item.active) {
-      navItem.fills = [{type: 'SOLID', color: {r: 0.55, g: 0.36, b: 1}, opacity: 0.1}];
-      navItem.strokes = [{type: 'SOLID', color: {r: 0.55, g: 0.36, b: 1}}];
+      navItem.fills = [{ type: 'SOLID', color: { r: 0.55, g: 0.36, b: 1 }, opacity: 0.1 }];
+      navItem.strokes = [{ type: 'SOLID', color: { r: 0.55, g: 0.36, b: 1 }, opacity: 1 }];
       navItem.strokeWeight = 2;
     } else {
       navItem.fills = [];
     }
     const navText = figma.createText();
     navText.name = "Nav Text";
-    navText.fontName = {family: 'Inter', style: item.active ? 'Medium' : 'Regular'};
+    navText.fontName = { family: 'Inter', style: item.active ? 'Medium' : 'Regular' };
     navText.characters = item.name;
     navText.fontSize = 14;
-    navText.fills = [{type: 'SOLID', color: item.active ? {r: 0.55, g: 0.36, b: 1} : {r: 0.4, g: 0.4, b: 0.5}}];
+    navText.fills = [{ type: 'SOLID', color: item.active ? { r: 0.55, g: 0.36, b: 1 } : { r: 0.4, g: 0.4, b: 0.5 } }];
     navItem.appendChild(navText);
     topNav.appendChild(navItem);
   });
 
-  // Main Content
+  // Main Content Area
   const mainContent = figma.createFrame();
   mainContent.name = "Main Content";
-  mainContent.layoutMode = 'VERTICAL';
+  mainContent.layoutMode = 'HORIZONTAL';
   mainContent.primaryAxisSizingMode = 'FIXED';
   mainContent.counterAxisSizingMode = 'FIXED';
-  mainContent.resize(1440, 944);
+  mainContent.resize(1440, 800);
+  mainContent.itemSpacing = 32;
   mainContent.paddingTop = 32;
   mainContent.paddingLeft = 32;
   mainContent.paddingRight = 32;
   mainContent.paddingBottom = 32;
-  mainContent.itemSpacing = 32;
-  mainContent.fills = [{type: 'SOLID', color: {r: 0.97, g: 0.98, b: 1}}];
+  mainContent.fills = [{ type: 'SOLID', color: { r: 0.97, g: 0.98, b: 1 } }];
 
-  // Page Title
-  const pageTitle = figma.createText();
-  pageTitle.name = "Page Title";
-  pageTitle.fontName = {family: 'Inter', style: 'Bold'};
-  pageTitle.characters = "系統設定 (Settings)";
-  pageTitle.fontSize = 28;
-  pageTitle.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
+  // Personal Settings Section
+  const personalSection = figma.createFrame();
+  personalSection.name = "Personal Settings Section";
+  personalSection.layoutMode = 'VERTICAL';
+  personalSection.primaryAxisSizingMode = 'FIXED';
+  personalSection.counterAxisSizingMode = 'AUTO';
+  personalSection.resize(700, 736);
+  personalSection.paddingTop = 24;
+  personalSection.paddingLeft = 24;
+  personalSection.paddingRight = 24;
+  personalSection.paddingBottom = 24;
+  personalSection.itemSpacing = 20;
+  personalSection.cornerRadius = 12;
+  personalSection.fills = [{ type: 'SOLID', color: { r: 1, g: 1, b: 1 } }];
+  personalSection.strokes = [{ type: 'SOLID', color: { r: 0.9, g: 0.9, b: 0.95 }, opacity: 1 }];
+  personalSection.strokeWeight = 1;
+  const personalTitle = figma.createText();
+  personalTitle.name = "Section Title";
+  personalTitle.fontName = { family: 'Inter', style: 'Bold' };
+  personalTitle.characters = "個人設定";
+  personalTitle.fontSize = 28;
+  personalTitle.fills = [{ type: 'SOLID', color: { r: 0.1, g: 0.1, b: 0.2 } }];
+  // Email Field
+  const emailLabel = figma.createText();
+  emailLabel.name = "Email Label";
+  emailLabel.fontName = { family: 'Inter', style: 'Medium' };
+  emailLabel.characters = "Email：";
+  emailLabel.fontSize = 16;
+  emailLabel.fills = [{ type: 'SOLID', color: { r: 0.1, g: 0.1, b: 0.2 } }];
+  const emailInput = figma.createFrame();
+  emailInput.name = "Email Input";
+  emailInput.layoutMode = 'HORIZONTAL';
+  emailInput.primaryAxisSizingMode = 'FIXED';
+  emailInput.counterAxisSizingMode = 'FIXED';
+  emailInput.resize(300, 40);
+  emailInput.fills = [{ type: 'SOLID', color: { r: 1, g: 1, b: 1 } }];
+  emailInput.strokes = [{ type: 'SOLID', color: { r: 0.9, g: 0.9, b: 0.95 }, opacity: 1 }];
+  emailInput.strokeWeight = 1;
+  const emailPlaceholder = figma.createText();
+  emailPlaceholder.name = "Email Placeholder";
+  emailPlaceholder.fontName = { family: 'Inter', style: 'Regular' };
+  emailPlaceholder.characters = "請輸入您的電子郵件";
+  emailPlaceholder.fontSize = 14;
+  emailPlaceholder.fills = [{ type: 'SOLID', color: { r: 0.4, g: 0.4, b: 0.5 } }];
+  emailInput.appendChild(emailPlaceholder);
+  personalSection.appendChild(emailLabel);
+  personalSection.appendChild(emailInput);
 
-  // Network Setting Field
-  const networkFrame = figma.createFrame();
-  networkFrame.name = "Network Setting";
+  // Insert Phone Field
+  const phoneLabel = figma.createText();
+  phoneLabel.name = "Phone Label";
+  phoneLabel.fontName = { family: 'Inter', style: 'Medium' };
+  phoneLabel.characters = "電話：";
+  phoneLabel.fontSize = 16;
+  phoneLabel.fills = [{ type: 'SOLID', color: { r: 0.1, g: 0.1, b: 0.2 } }];
+  const phoneInput = figma.createFrame();
+  phoneInput.name = "Phone Input";
+  phoneInput.layoutMode = 'HORIZONTAL';
+  phoneInput.primaryAxisSizingMode = 'FIXED';
+  phoneInput.counterAxisSizingMode = 'FIXED';
+  phoneInput.resize(300, 40);
+  phoneInput.fills = [{ type: 'SOLID', color: { r: 1, g: 1, b: 1 } }];
+  phoneInput.strokes = [{ type: 'SOLID', color: { r: 0.9, g: 0.9, b: 0.95 }, opacity: 1 }];
+  phoneInput.strokeWeight = 1;
+  const phonePlaceholder = figma.createText();
+  phonePlaceholder.name = "Phone Placeholder";
+  phonePlaceholder.fontName = { family: 'Inter', style: 'Regular' };
+  phonePlaceholder.characters = "請輸入電話號碼";
+  phonePlaceholder.fontSize = 14;
+  phonePlaceholder.fills = [{ type: 'SOLID', color: { r: 0.4, g: 0.4, b: 0.5 } }];
+  phoneInput.appendChild(phonePlaceholder);
+  personalSection.appendChild(phoneLabel);
+  personalSection.appendChild(phoneInput);
 
-  // Add Network Controls
-  networkFrame.layoutMode = 'HORIZONTAL';
-  networkFrame.primaryAxisSizingMode = 'AUTO';
-  networkFrame.counterAxisSizingMode = 'AUTO';
-  networkFrame.counterAxisAlignItems = 'CENTER';
-  networkFrame.itemSpacing = 16;
-  networkFrame.paddingTop = 16;
-  networkFrame.paddingBottom = 16;
+  mainContent.appendChild(personalSection);
 
-  const networkLabel = figma.createText();
-  networkLabel.name = "Network Label";
-  networkLabel.fontName = {family: 'Inter', style: 'Medium'};
-  networkLabel.characters = "Network:";
-  networkLabel.fontSize = 16;
-  networkLabel.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
+  // Insert Credential Section
+  const credentialSection = figma.createFrame();
+  credentialSection.name = "Credential Section";
+  credentialSection.layoutMode = 'VERTICAL';
+  credentialSection.primaryAxisSizingMode = 'FIXED';
+  credentialSection.counterAxisSizingMode = 'AUTO';
+  credentialSection.resize(700, 736);
+  credentialSection.paddingTop = 24;
+  credentialSection.paddingLeft = 24;
+  credentialSection.paddingRight = 24;
+  credentialSection.paddingBottom = 24;
+  credentialSection.itemSpacing = 20;
+  credentialSection.cornerRadius = 12;
+  credentialSection.fills = [{ type: 'SOLID', color: { r: 1, g: 1, b: 1 } }];
+  credentialSection.strokes = [{ type: 'SOLID', color: { r: 0.9, g: 0.9, b: 0.95 }, opacity: 1 }];
+  credentialSection.strokeWeight = 1;
+  const credentialTitle = figma.createText();
+  credentialTitle.name = "Section Title";
+  credentialTitle.fontName = { family: 'Inter', style: 'Bold' };
+  credentialTitle.characters = "Notary Credential";
+  credentialTitle.fontSize = 28;
+  credentialTitle.fills = [{ type: 'SOLID', color: { r: 0.1, g: 0.1, b: 0.2 } }];
+  const downloadCredButton = figma.createFrame();
+  downloadCredButton.name = "Download Credential Button";
+  downloadCredButton.layoutMode = 'HORIZONTAL';
+  downloadCredButton.primaryAxisSizingMode = 'AUTO';
+  downloadCredButton.counterAxisSizingMode = 'AUTO';
+  downloadCredButton.counterAxisAlignItems = 'CENTER';
+  downloadCredButton.itemSpacing = 8;
+  downloadCredButton.paddingTop = 14;
+  downloadCredButton.paddingBottom = 14;
+  downloadCredButton.paddingLeft = 24;
+  downloadCredButton.paddingRight = 24;
+  downloadCredButton.cornerRadius = 8;
+  downloadCredButton.fills = [{ type: 'SOLID', color: { r: 0.23, g: 0.51, b: 1 } }];
+  const downloadCredText = figma.createText();
+  downloadCredText.name = "Download Credential Text";
+  downloadCredText.fontName = { family: 'Inter', style: 'Medium' };
+  downloadCredText.characters = "下載 Notary Credential (JSON-LD)";
+  downloadCredText.fontSize = 16;
+  downloadCredText.fills = [{ type: 'SOLID', color: { r: 1, g: 1, b: 1 } }];
+  downloadCredButton.appendChild(downloadCredText);
+  credentialSection.appendChild(credentialTitle);
+  credentialSection.appendChild(downloadCredButton);
+  mainContent.appendChild(credentialSection);
 
-  const networkDropdown = figma.createFrame();
-  networkDropdown.name = "Network Dropdown";
-  networkDropdown.layoutMode = 'HORIZONTAL';
-  networkDropdown.primaryAxisSizingMode = 'FIXED';
-  networkDropdown.counterAxisSizingMode = 'AUTO';
-  networkDropdown.resize(300, 40);
-  networkDropdown.counterAxisAlignItems = 'CENTER';
-  networkDropdown.primaryAxisAlignItems = 'SPACE_BETWEEN';
-  networkDropdown.paddingLeft = 12;
-  networkDropdown.paddingRight = 12;
-  networkDropdown.cornerRadius = 6;
-  networkDropdown.fills = [{type: 'SOLID', color: {r: 0.98, g: 0.98, b: 1}}];
-  networkDropdown.strokes = [{type: 'SOLID', color: {r: 0.9, g: 0.9, b: 0.95}}];
-  networkDropdown.strokeWeight = 1;
-
-  const dropdownText = figma.createText();
-  dropdownText.name = "Dropdown Text";
-  dropdownText.fontName = {family: 'Inter', style: 'Regular'};
-  dropdownText.characters = "Mainnet";
-  dropdownText.fontSize = 14;
-  dropdownText.fills = [{type: 'SOLID', color: {r: 0.4, g: 0.4, b: 0.5}}];
-
-  const dropdownIcon = figma.createNodeFromSvg(`
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-      <polyline points="6,9 12,15 18,9" stroke="#94A3B8" stroke-width="2"/>
-    </svg>
-  `);
-
-  networkDropdown.appendChild(dropdownText);
-  networkDropdown.appendChild(dropdownIcon);
-
-  // Assemble networkFrame
-  networkFrame.appendChild(networkLabel);
-  networkFrame.appendChild(networkDropdown);
-
-  // Assemble Main Content
-  mainContent.appendChild(pageTitle);
-  mainContent.appendChild(networkFrame);
-
-  // Assemble Dashboard
   dashboard.appendChild(header);
   dashboard.appendChild(topNav);
   dashboard.appendChild(mainContent);
-
-  // Append dashboard to page
   figma.currentPage.appendChild(dashboard);
 })(); 

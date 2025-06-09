@@ -159,7 +159,7 @@
   mainContent.itemSpacing = 24;
   mainContent.fills = [{type: 'SOLID', color: {r: 0.97, g: 0.98, b: 1}}];
 
-  // Upload BundleA Section
+  // Upload BundleA Section (styled like Step 1 - File Upload)
   const uploadSection = figma.createFrame();
   uploadSection.name = "Upload BundleA Section";
   uploadSection.layoutMode = 'VERTICAL';
@@ -173,9 +173,18 @@
   uploadSection.itemSpacing = 20;
   uploadSection.cornerRadius = 12;
   uploadSection.fills = [{type: 'SOLID', color: {r: 1, g: 1, b: 1}}];
-  uploadSection.strokes = [{type: 'SOLID', color: {r: 0.9, g: 0.9, b: 0.95}}];
+  uploadSection.strokes = [{type: 'SOLID', color: {r: 0.9, g: 0.9, b: 0.95}, opacity: 1}];
   uploadSection.strokeWeight = 1;
-  
+
+  // Section Title
+  const sectionTitle = figma.createText();
+  sectionTitle.name = "Section Title";
+  sectionTitle.fontName = {family: 'Inter', style: 'Bold'};
+  sectionTitle.characters = "上傳 BundleA";
+  sectionTitle.fontSize = 28;
+  sectionTitle.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
+  uploadSection.appendChild(sectionTitle);
+
   // Upload Area
   const uploadArea = figma.createFrame();
   uploadArea.name = "Upload BundleA Area";
@@ -192,20 +201,36 @@
   uploadArea.itemSpacing = 16;
   uploadArea.cornerRadius = 8;
   uploadArea.fills = [{type: 'SOLID', color: {r: 0.98, g: 0.98, b: 1}}];
-  uploadArea.strokes = [{type: 'SOLID', color: {r: 0.23, g: 0.51, b: 1}}];
+  uploadArea.strokes = [{type: 'SOLID', color: {r: 0.23, g: 0.51, b: 1}, opacity: 1}];
   uploadArea.strokeWeight = 2;
+  uploadArea.strokeDashPattern = [8, 8];
 
+  const uploadIcon = figma.createNodeFromSvg(`
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+      <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="#3B82F6" stroke-width="2"/>
+      <polyline points="14,2 14,8 20,8" stroke="#3B82F6" stroke-width="2"/>
+      <line x1="16" y1="13" x2="8" y2="13" stroke="#3B82F6" stroke-width="2"/>
+      <line x1="16" y1="17" x2="8" y2="17" stroke="#3B82F6" stroke-width="2"/>
+      <polyline points="10,9 9,9 8,9" stroke="#3B82F6" stroke-width="2"/>
+    </svg>
+  `);
   const uploadText = figma.createText();
   uploadText.name = "Upload Text";
   uploadText.fontName = {family: 'Inter', style: 'Medium'};
   uploadText.characters = "點擊或拖曳上傳 BundleA JSON";
   uploadText.fontSize = 18;
   uploadText.fills = [{type: 'SOLID', color: {r: 0.23, g: 0.51, b: 1}}];
+  const supportedFormats = figma.createText();
+  supportedFormats.name = "Supported Formats";
+  supportedFormats.fontName = {family: 'Inter', style: 'Regular'};
+  supportedFormats.characters = "支援：JSON";
+  supportedFormats.fontSize = 14;
+  supportedFormats.fills = [{type: 'SOLID', color: {r: 0.4, g: 0.4, b: 0.5}}];
+  uploadArea.appendChild(uploadIcon);
   uploadArea.appendChild(uploadText);
+  uploadArea.appendChild(supportedFormats);
 
-  uploadSection.appendChild(uploadText);
   uploadSection.appendChild(uploadArea);
-
   mainContent.appendChild(uploadSection);
   // Info Note
   const infoNote = figma.createFrame();
