@@ -49,7 +49,7 @@
   const logoText = figma.createText();
   logoText.name = "Logo Text";
   logoText.fontName = {family: 'Inter', style: 'Bold'};
-  logoText.characters = "數位遺囑系統 — Notary";
+  logoText.characters = "Digital Will System — Notary";
   logoText.fontSize = 20;
   logoText.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
 
@@ -68,7 +68,7 @@
   const walletInfo = figma.createText();
   walletInfo.name = "Wallet Info";
   walletInfo.fontName = {family: 'Inter', style: 'Medium'};
-  walletInfo.characters = "已連結錢包：did:ethr:0xNotaryXYZ…";
+  walletInfo.characters = "Connected Wallet: did:ethr:0xNotaryXYZ…";
   walletInfo.fontSize = 14;
   walletInfo.fills = [{type: 'SOLID', color: {r: 0.4, g: 0.4, b: 0.5}}];
 
@@ -88,7 +88,7 @@
   const logoutText = figma.createText();
   logoutText.name = "Logout Text";
   logoutText.fontName = {family: 'Inter', style: 'Medium'};
-  logoutText.characters = "登出";
+  logoutText.characters = "Logout";
   logoutText.fontSize = 14;
   logoutText.fills = [{type: 'SOLID', color: {r: 0.4, g: 0.4, b: 0.5}}];
 
@@ -117,12 +117,12 @@
   topNav.strokeWeight = 1;
 
   const navItems = [
-    {name: "待審核上傳遺囑", active: false},
-    {name: "手動上傳 BundleA", active: false},
-    {name: "審核預覽／下載申請", active: false},
-    {name: "簽發 VC 管理", active: true},
-    {name: "死亡後解鎖", active: false},
-    {name: "系統設定", active: false}
+    {name: "Pending Wills for Review", active: false},
+    {name: "Manual Upload Will Package", active: false},
+    {name: "Review Preview/Download Requests", active: false},
+    {name: "Issued VC Management", active: true},
+    {name: "Post-Mortem Unlock", active: false},
+    {name: "System Settings", active: false}
   ];
 
   navItems.forEach(item => {
@@ -183,7 +183,7 @@
   const issuedTitle = figma.createText();
   issuedTitle.name = "Section Title";
   issuedTitle.fontName = {family: 'Inter', style: 'Bold'};
-  issuedTitle.characters = "已簽發 VC 列表 (Issued Credentials)";
+  issuedTitle.characters = "Issued Credentials";
   issuedTitle.fontSize = 28;
   issuedTitle.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
 
@@ -319,14 +319,14 @@
   const panelTitle = figma.createText();
   panelTitle.name = "Panel Title";
   panelTitle.fontName = {family: 'Inter', style: 'Bold'};
-  panelTitle.characters = "操作區";
+  panelTitle.characters = "Operations Panel";
   panelTitle.fontSize = 24;
   panelTitle.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
 
   const vcInfo = figma.createText();
   vcInfo.name = "Selected VC";
   vcInfo.fontName = {family: 'Inter', style: 'Medium'};
-  vcInfo.characters = "已選擇：Credential ID urn:uuid:1234";
+  vcInfo.characters = "Selected: Credential ID urn:uuid:1234";
   vcInfo.fontSize = 16;
   vcInfo.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
 
@@ -347,7 +347,7 @@
   const revokeText = figma.createText();
   revokeText.name = "Revoke Text";
   revokeText.fontName = {family: 'Inter', style: 'Medium'};
-  revokeText.characters = "撤銷 VC";
+  revokeText.characters = "Revoke VC";
   revokeText.fontSize = 16;
   revokeText.fills = [{type: 'SOLID', color: {r: 1, g: 1, b: 1}}];
 

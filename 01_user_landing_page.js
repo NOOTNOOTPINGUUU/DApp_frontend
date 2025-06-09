@@ -49,11 +49,10 @@
     </svg>
   `);
 
-  // Logo Text
   const logoText = figma.createText();
   logoText.name = "Logo Text";
   logoText.fontName = {family: 'Inter', style: 'Bold'};
-  logoText.characters = "數位遺囑系統";
+  logoText.characters = "Digital Will System";
   logoText.fontSize = 24;
   logoText.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
 
@@ -86,7 +85,7 @@
   const buttonText = figma.createText();
   buttonText.name = "Button Text";
   buttonText.fontName = {family: 'Inter', style: 'Medium'};
-  buttonText.characters = "連結錢包";
+  buttonText.characters = "Connect Wallet";
   buttonText.fontSize = 16;
   buttonText.fills = [{type: 'SOLID', color: {r: 1, g: 1, b: 1}}];
 
@@ -115,7 +114,7 @@
   const mainTitle = figma.createText();
   mainTitle.name = "Main Title";
   mainTitle.fontName = {family: 'Inter', style: 'Bold'};
-  mainTitle.characters = "數位遺囑系統";
+  mainTitle.characters = "Digital Will System";
   mainTitle.fontSize = 48;
   mainTitle.textAlignHorizontal = 'CENTER';
   mainTitle.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
@@ -124,7 +123,7 @@
   const subtitle = figma.createText();
   subtitle.name = "Subtitle";
   subtitle.fontName = {family: 'Inter', style: 'Regular'};
-  subtitle.characters = "基於區塊鏈技術的去中心化遺囑管理系統\n讓您的數位資產傳承更加安全可靠";
+  subtitle.characters = "A decentralized will management system based on blockchain technology\\nMaking the inheritance of your digital assets safer and more reliable";
   subtitle.fontSize = 20;
   subtitle.textAlignHorizontal = 'CENTER';
   subtitle.lineHeight = {unit: 'PIXELS', value: 32};
@@ -145,8 +144,8 @@
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#10B981" stroke-width="2"/>
         <path d="M9 12l2 2 4-4" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
       </svg>`,
-      title: "區塊鏈安全",
-      description: "採用以太坊區塊鏈技術\n確保遺囑不可篡改"
+      title: "Blockchain Security",
+      description: "Uses Ethereum blockchain technology\\nEnsuring wills cannot be tampered with"
     },
     {
       icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none">
@@ -154,8 +153,8 @@
         <rect x="8" y="2" width="8" height="4" rx="1" ry="1" stroke="#8B5CF6" stroke-width="2"/>
         <path d="M9 12l2 2 4-4" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round"/>
       </svg>`,
-      title: "公證審核",
-      description: "專業公證人審核機制\n確保遺囑合法有效"
+      title: "Notary Auditing",
+      description: "Professional notary review mechanism\\nEnsuring wills are legal and valid"
     },
     {
       icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none">
@@ -165,8 +164,8 @@
         <path d="M12 21c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z" fill="#F59E0B"/>
         <path d="M12 3c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z" fill="#F59E0B"/>
       </svg>`,
-      title: "智能管理",
-      description: "多媒體檔案支援\n智能加密與解鎖"
+      title: "Intelligent Management",
+      description: "Multimedia file support\\nIntelligent encryption and decryption"
     }
   ];
 

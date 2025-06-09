@@ -48,7 +48,7 @@
   const logoText = figma.createText();
   logoText.name = "Logo Text";
   logoText.fontName = { family: 'Inter', style: 'Bold' };
-  logoText.characters = "數位遺囑系統 — Notary";
+  logoText.characters = "Digital Will System — Notary";
   logoText.fontSize = 20;
   logoText.fills = [{ type: 'SOLID', color: { r: 0.1, g: 0.1, b: 0.2 } }];
   logoSection.appendChild(logoIcon);
@@ -65,7 +65,7 @@
   const walletInfo = figma.createText();
   walletInfo.name = "Wallet Info";
   walletInfo.fontName = { family: 'Inter', style: 'Medium' };
-  walletInfo.characters = "已連結錢包：did:ethr:0xNotaryXYZ…";
+  walletInfo.characters = "Connected Wallet: did:ethr:0xNotaryXYZ…";
   walletInfo.fontSize = 14;
   walletInfo.fills = [{ type: 'SOLID', color: { r: 0.4, g: 0.4, b: 0.5 } }];
   const logoutButton = figma.createFrame();
@@ -83,7 +83,7 @@
   const logoutText = figma.createText();
   logoutText.name = "Logout Text";
   logoutText.fontName = { family: 'Inter', style: 'Medium' };
-  logoutText.characters = "登出";
+  logoutText.characters = "Logout";
   logoutText.fontSize = 14;
   logoutText.fills = [{ type: 'SOLID', color: { r: 0.4, g: 0.4, b: 0.5 } }];
   logoutButton.appendChild(logoutText);
@@ -110,12 +110,12 @@
   topNav.strokes = [{ type: 'SOLID', color: { r: 0.9, g: 0.9, b: 0.95 }, opacity: 1 }];
   topNav.strokeWeight = 1;
   const navItems = [
-    { name: "待審核上傳遺囑", active: false },
-    { name: "手動上傳 BundleA", active: false },
-    { name: "審核預覽／下載申請", active: false },
-    { name: "簽發 VC 管理", active: false },
-    { name: "死亡後解鎖", active: false },
-    { name: "系統設定", active: true }
+    { name: "Pending Wills for Review", active: false },
+    { name: "Manual Upload Will Package", active: false },
+    { name: "Review Preview/Download Requests", active: false },
+    { name: "Issued VC Management", active: false },
+    { name: "Post-Mortem Unlock", active: false },
+    { name: "System Settings", active: true }
   ];
   navItems.forEach(item => {
     const navItem = figma.createFrame();
@@ -179,14 +179,14 @@
   const personalTitle = figma.createText();
   personalTitle.name = "Section Title";
   personalTitle.fontName = { family: 'Inter', style: 'Bold' };
-  personalTitle.characters = "個人設定";
+  personalTitle.characters = "Personal Settings";
   personalTitle.fontSize = 28;
   personalTitle.fills = [{ type: 'SOLID', color: { r: 0.1, g: 0.1, b: 0.2 } }];
   // Email Field
   const emailLabel = figma.createText();
   emailLabel.name = "Email Label";
   emailLabel.fontName = { family: 'Inter', style: 'Medium' };
-  emailLabel.characters = "Email：";
+  emailLabel.characters = "Email:";
   emailLabel.fontSize = 16;
   emailLabel.fills = [{ type: 'SOLID', color: { r: 0.1, g: 0.1, b: 0.2 } }];
   const emailInput = figma.createFrame();
@@ -201,7 +201,7 @@
   const emailPlaceholder = figma.createText();
   emailPlaceholder.name = "Email Placeholder";
   emailPlaceholder.fontName = { family: 'Inter', style: 'Regular' };
-  emailPlaceholder.characters = "請輸入您的電子郵件";
+  emailPlaceholder.characters = "Enter your email";
   emailPlaceholder.fontSize = 14;
   emailPlaceholder.fills = [{ type: 'SOLID', color: { r: 0.4, g: 0.4, b: 0.5 } }];
   emailInput.appendChild(emailPlaceholder);
@@ -212,7 +212,7 @@
   const phoneLabel = figma.createText();
   phoneLabel.name = "Phone Label";
   phoneLabel.fontName = { family: 'Inter', style: 'Medium' };
-  phoneLabel.characters = "電話：";
+  phoneLabel.characters = "Phone:";
   phoneLabel.fontSize = 16;
   phoneLabel.fills = [{ type: 'SOLID', color: { r: 0.1, g: 0.1, b: 0.2 } }];
   const phoneInput = figma.createFrame();
@@ -227,7 +227,7 @@
   const phonePlaceholder = figma.createText();
   phonePlaceholder.name = "Phone Placeholder";
   phonePlaceholder.fontName = { family: 'Inter', style: 'Regular' };
-  phonePlaceholder.characters = "請輸入電話號碼";
+  phonePlaceholder.characters = "Enter phone number";
   phonePlaceholder.fontSize = 14;
   phonePlaceholder.fills = [{ type: 'SOLID', color: { r: 0.4, g: 0.4, b: 0.5 } }];
   phoneInput.appendChild(phonePlaceholder);
@@ -274,7 +274,7 @@
   const downloadCredText = figma.createText();
   downloadCredText.name = "Download Credential Text";
   downloadCredText.fontName = { family: 'Inter', style: 'Medium' };
-  downloadCredText.characters = "下載 Notary Credential (JSON-LD)";
+  downloadCredText.characters = "Download Notary Credential (JSON-LD)";
   downloadCredText.fontSize = 16;
   downloadCredText.fills = [{ type: 'SOLID', color: { r: 1, g: 1, b: 1 } }];
   downloadCredButton.appendChild(downloadCredText);

@@ -51,7 +51,7 @@
   const logoText = figma.createText();
   logoText.name = "Logo Text";
   logoText.fontName = {family: 'Inter', style: 'Bold'};
-  logoText.characters = "數位遺囑系統 — Notary 入口";
+  logoText.characters = "Digital Will System — Notary Portal";
   logoText.fontSize = 24;
   logoText.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
 
@@ -83,7 +83,7 @@
   const buttonText = figma.createText();
   buttonText.name = "Button Text";
   buttonText.fontName = {family: 'Inter', style: 'Medium'};
-  buttonText.characters = "連結錢包";
+  buttonText.characters = "Connect Wallet";
   buttonText.fontSize = 16;
   buttonText.fills = [{type: 'SOLID', color: {r: 1, g: 1, b: 1}}];
 
@@ -138,7 +138,7 @@
   const mainTitle = figma.createText();
   mainTitle.name = "Main Title";
   mainTitle.fontName = {family: 'Inter', style: 'Bold'};
-  mainTitle.characters = "公證人專屬入口";
+  mainTitle.characters = "Notary Exclusive Portal";
   mainTitle.fontSize = 40;
   mainTitle.textAlignHorizontal = 'CENTER';
   mainTitle.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
@@ -155,7 +155,7 @@
   const noticeText = figma.createText();
   noticeText.name = "Notice Text";
   noticeText.fontName = {family: 'Inter', style: 'Regular'};
-  noticeText.characters = "此專屬入口僅限受授權之公證人（Notary）";
+  noticeText.characters = "This exclusive portal is limited to authorized notaries (Notary)";
   noticeText.fontSize = 20;
   noticeText.textAlignHorizontal = 'CENTER';
   noticeText.fills = [{type: 'SOLID', color: {r: 0.3, g: 0.3, b: 0.4}}];
@@ -163,7 +163,7 @@
   const instructionText = figma.createText();
   instructionText.name = "Instruction Text";
   instructionText.fontName = {family: 'Inter', style: 'Regular'};
-  instructionText.characters = "請先連結在後端已被授權為 Notary 的錢包";
+  instructionText.characters = "Please connect the wallet that has been authorized as a Notary in the backend first";
   instructionText.fontSize = 16;
   instructionText.textAlignHorizontal = 'CENTER';
   instructionText.fills = [{type: 'SOLID', color: {r: 0.5, g: 0.5, b: 0.6}}];
@@ -199,7 +199,7 @@
   const warningText = figma.createText();
   warningText.name = "Warning Text";
   warningText.fontName = {family: 'Inter', style: 'Medium'};
-  warningText.characters = "未授權的錢包將無法存取 Notary 功能";
+  warningText.characters = "Unauthorized wallets will not be able to access Notary functions";
   warningText.fontSize = 14;
   warningText.fills = [{type: 'SOLID', color: {r: 0.6, g: 0.45, b: 0.1}}];
 
@@ -218,7 +218,7 @@
   const featuresTitle = figma.createText();
   featuresTitle.name = "Features Title";
   featuresTitle.fontName = {family: 'Inter', style: 'Bold'};
-  featuresTitle.characters = "Notary 權限功能";
+  featuresTitle.characters = "Notary Permission Functions";
   featuresTitle.fontSize = 20;
   featuresTitle.textAlignHorizontal = 'CENTER';
   featuresTitle.fills = [{type: 'SOLID', color: {r: 0.2, g: 0.2, b: 0.3}}];
@@ -238,8 +238,8 @@
         <rect x="8" y="2" width="8" height="4" rx="1" ry="1" stroke="#8B5CF6" stroke-width="2"/>
         <path d="M9 12l2 2 4-4" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round"/>
       </svg>`,
-      title: "遺囑審核",
-      description: "審核並發布遺囑至區塊鏈"
+      title: "Will Review",
+      description: "Review and publish wills to the blockchain"
     },
     {
       icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none">
@@ -247,8 +247,8 @@
         <circle cx="8.5" cy="7" r="4" stroke="#10B981" stroke-width="2"/>
         <path d="M20 8v6m-3-3h6" stroke="#10B981" stroke-width="2"/>
       </svg>`,
-      title: "VC 簽發",
-      description: "簽發數位憑證與權限管理"
+      title: "VC Issuance",
+      description: "Issue digital certificates and manage permissions"
     },
     {
       icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none">
@@ -256,8 +256,8 @@
         <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" stroke="#F59E0B" stroke-width="2"/>
         <path d="M12 7v4" stroke="#F59E0B" stroke-width="2"/>
       </svg>`,
-      title: "解鎖管理",
-      description: "死亡後遺囑解鎖與公開"
+      title: "Unlock Management",
+      description: "Unlock and publish wills after death"
     }
   ];
 

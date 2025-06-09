@@ -49,7 +49,7 @@
   const logoText = figma.createText();
   logoText.name = "Logo Text";
   logoText.fontName = {family: 'Inter', style: 'Bold'};
-  logoText.characters = "數位遺囑系統 — Notary";
+  logoText.characters = "Digital Will System — Notary";
   logoText.fontSize = 20;
   logoText.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
 
@@ -68,7 +68,7 @@
   const walletInfo = figma.createText();
   walletInfo.name = "Wallet Info";
   walletInfo.fontName = {family: 'Inter', style: 'Medium'};
-  walletInfo.characters = "已連結錢包：did:ethr:0xNotaryXYZ…";
+  walletInfo.characters = "Connected Wallet: did:ethr:0xNotaryXYZ…";
   walletInfo.fontSize = 14;
   walletInfo.fills = [{type: 'SOLID', color: {r: 0.4, g: 0.4, b: 0.5}}];
 
@@ -88,7 +88,7 @@
   const logoutText = figma.createText();
   logoutText.name = "Logout Text";
   logoutText.fontName = {family: 'Inter', style: 'Medium'};
-  logoutText.characters = "登出";
+  logoutText.characters = "Logout";
   logoutText.fontSize = 14;
   logoutText.fills = [{type: 'SOLID', color: {r: 0.4, g: 0.4, b: 0.5}}];
 
@@ -118,12 +118,12 @@
 
   // Navigation Items
   const navItems = [
-    { name: "待審核上傳遺囑", active: true },
-    { name: "手動上傳 BundleA", active: false },
-    { name: "審核預覽／下載申請", active: false },
-    { name: "簽發 VC 管理", active: false },
-    { name: "死亡後解鎖", active: false },
-    { name: "系統設定", active: false }
+    { name: "Pending Wills for Review", active: true },
+    { name: "Manual Upload Will Package", active: false },
+    { name: "Review Preview/Download Requests", active: false },
+    { name: "Issued VC Management", active: false },
+    { name: "Post-Mortem Unlock", active: false },
+    { name: "System Settings", active: false }
   ];
 
   navItems.forEach(item => {
@@ -185,7 +185,7 @@
   const sectionTitle = figma.createText();
   sectionTitle.name = "Section Title";
   sectionTitle.fontName = {family: 'Inter', style: 'Bold'};
-  sectionTitle.characters = "待審核上傳遺囑 (Pending Bundles)";
+  sectionTitle.characters = "Pending Wills for Review (Pending Bundles)";
   sectionTitle.fontSize = 28;
   sectionTitle.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
 
@@ -227,7 +227,7 @@
     { name: "Bundle ID", width: 120 },
     { name: "Testator DID", width: 250 },
     { name: "Content Hash", width: 150 },
-    { name: "操作", width: 132 }
+    { name: "Action", width: 132 }
   ];
 
   headerColumns.forEach(column => {
@@ -376,7 +376,7 @@
     const selectText = figma.createText();
     selectText.name = "Select Text";
     selectText.fontName = {family: 'Inter', style: 'Medium'};
-    selectText.characters = "選擇";
+    selectText.characters = "Select";
     selectText.fontSize = 12;
     selectText.fills = [{type: 'SOLID', color: {r: 1, g: 1, b: 1}}];
 
@@ -418,7 +418,7 @@
   const reviewTitle = figma.createText();
   reviewTitle.name = "Review Title";
   reviewTitle.fontName = {family: 'Inter', style: 'Bold'};
-  reviewTitle.characters = "審核操作區";
+  reviewTitle.characters = "Review Panel";
   reviewTitle.fontSize = 24;
   reviewTitle.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
 
@@ -439,7 +439,7 @@
   const selectedBundleText = figma.createText();
   selectedBundleText.name = "Selected Bundle";
   selectedBundleText.fontName = {family: 'Inter', style: 'Medium'};
-  selectedBundleText.characters = "已選擇：Bundle ID bnd-123";
+  selectedBundleText.characters = "Selected: Bundle ID bnd-123";
   selectedBundleText.fontSize = 16;
   selectedBundleText.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
 
@@ -465,7 +465,7 @@
   const actionsTitle = figma.createText();
   actionsTitle.name = "Actions Title";
   actionsTitle.fontName = {family: 'Inter', style: 'Bold'};
-  actionsTitle.characters = "操作選項";
+  actionsTitle.characters = "Action Options";
   actionsTitle.fontSize = 18;
   actionsTitle.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
 
@@ -477,9 +477,9 @@
   actionButtons.counterAxisSizingMode = 'AUTO';
   actionButtons.itemSpacing = 12;
 
-  // Download BundleA Button
+  // Download Will Package Button
   const downloadButton = figma.createFrame();
-  downloadButton.name = "Download BundleA Button";
+  downloadButton.name = "Download Will Package Button";
   downloadButton.layoutMode = 'HORIZONTAL';
   downloadButton.primaryAxisSizingMode = 'AUTO';
   downloadButton.counterAxisSizingMode = 'AUTO';
@@ -503,7 +503,7 @@
   const downloadText = figma.createText();
   downloadText.name = "Download Text";
   downloadText.fontName = {family: 'Inter', style: 'Medium'};
-  downloadText.characters = "下載 BundleA JSON";
+  downloadText.characters = "Download Will Package JSON";
   downloadText.fontSize = 16;
   downloadText.fills = [{type: 'SOLID', color: {r: 1, g: 1, b: 1}}];
 
@@ -535,7 +535,7 @@
   const previewText = figma.createText();
   previewText.name = "Preview Text";
   previewText.fontName = {family: 'Inter', style: 'Medium'};
-  previewText.characters = "查看原始檔案";
+  previewText.characters = "View Original File";
   previewText.fontSize = 16;
   previewText.fills = [{type: 'SOLID', color: {r: 1, g: 1, b: 1}}];
 
@@ -567,7 +567,7 @@
   const verifyText = figma.createText();
   verifyText.name = "Verify Text";
   verifyText.fontName = {family: 'Inter', style: 'Medium'};
-  verifyText.characters = "驗證簽章";
+  verifyText.characters = "Verify Signature";
   verifyText.fontSize = 16;
   verifyText.fills = [{type: 'SOLID', color: {r: 1, g: 1, b: 1}}];
 
@@ -600,7 +600,7 @@
   const decisionTitle = figma.createText();
   decisionTitle.name = "Decision Title";
   decisionTitle.fontName = {family: 'Inter', style: 'Bold'};
-  decisionTitle.characters = "審核結果";
+  decisionTitle.characters = "Review Decision";
   decisionTitle.fontSize = 18;
   decisionTitle.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
 
@@ -635,7 +635,7 @@
   const approveText = figma.createText();
   approveText.name = "Approve Text";
   approveText.fontName = {family: 'Inter', style: 'Medium'};
-  approveText.characters = "通過並上鏈（Approve & Publish）";
+  approveText.characters = "Approve & Publish";
   approveText.fontSize = 16;
   approveText.fills = [{type: 'SOLID', color: {r: 0.16, g: 0.74, b: 0.51}}];
 
@@ -665,7 +665,7 @@
   const rejectText = figma.createText();
   rejectText.name = "Reject Text";
   rejectText.fontName = {family: 'Inter', style: 'Regular'};
-  rejectText.characters = "不通過 (Reject)";
+  rejectText.characters = "Reject";
   rejectText.fontSize = 16;
   rejectText.fills = [{type: 'SOLID', color: {r: 0.4, g: 0.4, b: 0.5}}];
 
@@ -686,7 +686,7 @@
   const remarkLabel = figma.createText();
   remarkLabel.name = "Remark Label";
   remarkLabel.fontName = {family: 'Inter', style: 'Medium'};
-  remarkLabel.characters = "備註 (如果選「不通過」，請填寫原因)：";
+  remarkLabel.characters = "Remarks (If rejected, please provide a reason):";
   remarkLabel.fontSize = 14;
   remarkLabel.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
 
@@ -708,7 +708,7 @@
   const remarkPlaceholder = figma.createText();
   remarkPlaceholder.name = "Remark Placeholder";
   remarkPlaceholder.fontName = {family: 'Inter', style: 'Regular'};
-  remarkPlaceholder.characters = "請填寫審核備註...";
+  remarkPlaceholder.characters = "Please fill in review remarks...";
   remarkPlaceholder.fontSize = 14;
   remarkPlaceholder.fills = [{type: 'SOLID', color: {r: 0.6, g: 0.6, b: 0.65}}];
 
@@ -741,7 +741,7 @@
   const submitText = figma.createText();
   submitText.name = "Submit Text";
   submitText.fontName = {family: 'Inter', style: 'Bold'};
-  submitText.characters = "提交審核結果";
+  submitText.characters = "Submit Review Decision";
   submitText.fontSize = 16;
   submitText.fills = [{type: 'SOLID', color: {r: 1, g: 1, b: 1}}];
 

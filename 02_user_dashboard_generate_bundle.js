@@ -5,7 +5,7 @@
 
   // Main Dashboard Frame
   const dashboard = figma.createFrame();
-  dashboard.name = "User Dashboard - Generate BundleA";
+  dashboard.name = "User Dashboard - Generate Will Package";
   dashboard.layoutMode = 'VERTICAL';
   dashboard.primaryAxisSizingMode = 'FIXED';
   dashboard.counterAxisSizingMode = 'FIXED';
@@ -48,7 +48,7 @@
   const logoText = figma.createText();
   logoText.name = "Logo Text";
   logoText.fontName = {family: 'Inter', style: 'Bold'};
-  logoText.characters = "數位遺囑系統 — 一般使用者";
+  logoText.characters = "Digital Will System — User";
   logoText.fontSize = 20;
   logoText.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
 
@@ -67,7 +67,7 @@
   const walletInfo = figma.createText();
   walletInfo.name = "Wallet Info";
   walletInfo.fontName = {family: 'Inter', style: 'Medium'};
-  walletInfo.characters = "已連結錢包：did:ethr:0xAAA…";
+  walletInfo.characters = "Connected Wallet: did:ethr:0xAAA…";
   walletInfo.fontSize = 14;
   walletInfo.fills = [{type: 'SOLID', color: {r: 0.4, g: 0.4, b: 0.5}}];
 
@@ -87,7 +87,7 @@
   const logoutText = figma.createText();
   logoutText.name = "Logout Text";
   logoutText.fontName = {family: 'Inter', style: 'Medium'};
-  logoutText.characters = "登出";
+  logoutText.characters = "Logout";
   logoutText.fontSize = 14;
   logoutText.fills = [{type: 'SOLID', color: {r: 0.4, g: 0.4, b: 0.5}}];
 
@@ -125,10 +125,10 @@
 
   // Sidebar Menu Items
   const menuItems = [
-    { name: "撰寫並打包遺囑", active: true, icon: "📝" },
-    { name: "提出預覽／下載請求", active: false, icon: "👁️" },
-    { name: "我的請求狀態", active: false, icon: "📋" },
-    { name: "個人設定", active: false, icon: "⚙️" }
+    { name: "Compose and Package Will", active: true, icon: "📝" },
+    { name: "Request Preview/Download", active: false, icon: "👁️" },
+    { name: "My Request Status", active: false, icon: "📋" },
+    { name: "Personal Settings", active: false, icon: "⚙️" }
   ];
 
   menuItems.forEach(item => {
@@ -182,7 +182,7 @@
   const pageTitle = figma.createText();
   pageTitle.name = "Page Title";
   pageTitle.fontName = {family: 'Inter', style: 'Bold'};
-  pageTitle.characters = "撰寫並打包遺囑 (Generate BundleA)";
+  pageTitle.characters = "Compose and Package Will (Generate Will Package)";
   pageTitle.fontSize = 28;
   pageTitle.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
 
@@ -206,7 +206,7 @@
   const step1Title = figma.createText();
   step1Title.name = "Step 1 Title";
   step1Title.fontName = {family: 'Inter', style: 'Bold'};
-  step1Title.characters = "步驟一：上傳遺囑檔案";
+  step1Title.characters = "Step 1: Upload Will File";
   step1Title.fontSize = 20;
   step1Title.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
 
@@ -243,7 +243,7 @@
   const uploadText = figma.createText();
   uploadText.name = "Upload Text";
   uploadText.fontName = {family: 'Inter', style: 'Medium'};
-  uploadText.characters = "拖曳或點擊上傳檔案";
+  uploadText.characters = "Drag and drop or click to upload file";
   uploadText.fontSize = 18;
   uploadText.textAlignHorizontal = 'CENTER';
   uploadText.fills = [{type: 'SOLID', color: {r: 0.23, g: 0.51, b: 1}}];
@@ -251,7 +251,7 @@
   const supportedFormats = figma.createText();
   supportedFormats.name = "Supported Formats";
   supportedFormats.fontName = {family: 'Inter', style: 'Regular'};
-  supportedFormats.characters = "支援：Markdown / PDF / JPG / PNG / MP4";
+  supportedFormats.characters = "Supports: Markdown / PDF / JPG / PNG / MP4";
   supportedFormats.fontSize = 14;
   supportedFormats.textAlignHorizontal = 'CENTER';
   supportedFormats.fills = [{type: 'SOLID', color: {r: 0.4, g: 0.4, b: 0.5}}];
@@ -307,9 +307,9 @@
   mainContent.resize(1440, 1064);
   dashboard.resize(1440, 1124);
 
-  // Step 2: Generate BundleA Section
+  // Step 2: Generate Will Package Section
   const step2Section = figma.createFrame();
-  step2Section.name = "Step 2 - Generate BundleA";
+  step2Section.name = "Step 2 - Generate Will Package";
   step2Section.layoutMode = 'VERTICAL';
   step2Section.primaryAxisSizingMode = 'AUTO';
   step2Section.counterAxisSizingMode = 'FIXED';
@@ -327,12 +327,12 @@
   const step2Title = figma.createText();
   step2Title.name = "Step 2 Title";
   step2Title.fontName = {family: 'Inter', style: 'Bold'};
-  step2Title.characters = "步驟二：生成 BundleA";
+  step2Title.characters = "Step 2: Generate Will Package";
   step2Title.fontSize = 20;
   step2Title.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
 
   const generateButton = figma.createFrame();
-  generateButton.name = "Generate BundleA Button";
+  generateButton.name = "Generate Will Package Button";
   generateButton.layoutMode = 'HORIZONTAL';
   generateButton.primaryAxisSizingMode = 'AUTO';
   generateButton.counterAxisSizingMode = 'AUTO';
@@ -355,7 +355,7 @@
   const generateText = figma.createText();
   generateText.name = "Generate Text";
   generateText.fontName = {family: 'Inter', style: 'Medium'};
-  generateText.characters = "計算 ContentHash 並簽章 → 生成 BundleA";
+  generateText.characters = "Calculate ContentHash and Sign → Generate Will Package";
   generateText.fontSize = 16;
   generateText.fills = [{type: 'SOLID', color: {r: 1, g: 1, b: 1}}];
 
@@ -365,7 +365,7 @@
   const processInfo = figma.createText();
   processInfo.name = "Process Info";
   processInfo.fontName = {family: 'Inter', style: 'Regular'};
-  processInfo.characters = "本流程將：計算檔案 Hash → 錢包簽章 → 打包成 BundleA JSON";
+  processInfo.characters = "This process will: Calculate file Hash → Wallet signature → Package into Will Package JSON";
   processInfo.fontSize = 14;
   processInfo.fills = [{type: 'SOLID', color: {r: 0.4, g: 0.4, b: 0.5}}];
 
@@ -393,7 +393,7 @@
   const step3Title = figma.createText();
   step3Title.name = "Step 3 Title";
   step3Title.fontName = {family: 'Inter', style: 'Bold'};
-  step3Title.characters = "步驟三：選擇後續動作";
+  step3Title.characters = "Step 3: Choose subsequent action";
   step3Title.fontSize = 20;
   step3Title.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
 
@@ -409,7 +409,7 @@
   const notaryLabel = figma.createText();
   notaryLabel.name = "Notary Label";
   notaryLabel.fontName = {family: 'Inter', style: 'Medium'};
-  notaryLabel.characters = "指定 Notary：";
+  notaryLabel.characters = "Assign Notary:";
   notaryLabel.fontSize = 16;
   notaryLabel.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
 
@@ -431,7 +431,7 @@
   const dropdownText = figma.createText();
   dropdownText.name = "Dropdown Text";
   dropdownText.fontName = {family: 'Inter', style: 'Regular'};
-  dropdownText.characters = "選擇公證人或輸入 DID";
+  dropdownText.characters = "Select Notary or enter DID";
   dropdownText.fontSize = 14;
   dropdownText.fills = [{type: 'SOLID', color: {r: 0.6, g: 0.6, b: 0.65}}];
 
@@ -481,7 +481,7 @@
   const downloadText = figma.createText();
   downloadText.name = "Download Text";
   downloadText.fontName = {family: 'Inter', style: 'Medium'};
-  downloadText.characters = "下載 BundleA (JSON)";
+  downloadText.characters = "Download Will Package (JSON)";
   downloadText.fontSize = 16;
   downloadText.fills = [{type: 'SOLID', color: {r: 1, g: 1, b: 1}}];
 
@@ -513,7 +513,7 @@
   const submitText = figma.createText();
   submitText.name = "Submit Text";
   submitText.fontName = {family: 'Inter', style: 'Medium'};
-  submitText.characters = "提交給 Notary";
+  submitText.characters = "Submit to Notary";
   submitText.fontSize = 16;
   submitText.fills = [{type: 'SOLID', color: {r: 1, g: 1, b: 1}}];
 
@@ -544,11 +544,11 @@
   noteText.name = "Note Text";
   noteText.fontName = {family: 'Inter', style: 'Regular'};
   noteText.characters =
-    `💡 重要提醒：
-• 未提交給 Notary 前，您暫時不會成為 Testator
-  只有等 Notary 審核通過並上鏈後，您才正式獲得 Testator 身分。
-• 如果未來想修改遺囑，只要在此重新上傳檔案，重新打包、指派 Notary 即可。
-• 所有 BundleA 將暫存在本地或使用者自行備份；若不提交，伺服器不保留任何未提交的原始檔案。`;
+    `💡 Important Reminder:
+• You will not become a Testator until you submit to the Notary.
+  You will only officially obtain Testator status after the Notary has reviewed and approved it on the chain.
+• If you want to modify the will in the future, just re-upload the file here, repackage, and assign a Notary.
+• All Will Package will be temporarily stored locally or backed up by the user; if not submitted, the server will not retain any unsubmitted original files.`;
   noteText.fontSize = 14;
   noteText.lineHeight = {unit: 'PIXELS', value: 20};
   noteText.fills = [{type: 'SOLID', color: {r: 0.6, g: 0.45, b: 0.1}}];

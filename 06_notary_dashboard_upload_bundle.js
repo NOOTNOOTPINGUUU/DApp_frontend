@@ -5,7 +5,7 @@
 
   // Main Dashboard Frame
   const dashboard = figma.createFrame();
-  dashboard.name = "Notary Dashboard - Upload BundleA";
+  dashboard.name = "Notary Dashboard - Upload Will Package";
   dashboard.layoutMode = 'VERTICAL';
   dashboard.primaryAxisSizingMode = 'FIXED';
   dashboard.counterAxisSizingMode = 'FIXED';
@@ -47,7 +47,7 @@
   const logoText = figma.createText();
   logoText.name = "Logo Text";
   logoText.fontName = {family: 'Inter', style: 'Bold'};
-  logoText.characters = "數位遺囑系統 — Notary";
+  logoText.characters = "Digital Will System — Notary";
   logoText.fontSize = 20;
   logoText.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
   logoSection.appendChild(logoIcon);
@@ -64,7 +64,7 @@
   const walletInfo = figma.createText();
   walletInfo.name = "Wallet Info";
   walletInfo.fontName = {family: 'Inter', style: 'Medium'};
-  walletInfo.characters = "已連結錢包：did:ethr:0xNotaryXYZ…";
+  walletInfo.characters = "Connected Wallet: did:ethr:0xNotaryXYZ…";
   walletInfo.fontSize = 14;
   walletInfo.fills = [{type: 'SOLID', color: {r: 0.4, g: 0.4, b: 0.5}}];
   const logoutButton = figma.createFrame();
@@ -82,7 +82,7 @@
   const logoutText = figma.createText();
   logoutText.name = "Logout Text";
   logoutText.fontName = {family: 'Inter', style: 'Medium'};
-  logoutText.characters = "登出";
+  logoutText.characters = "Logout";
   logoutText.fontSize = 14;
   logoutText.fills = [{type: 'SOLID', color: {r: 0.4, g: 0.4, b: 0.5}}];
   logoutButton.appendChild(logoutText);
@@ -109,12 +109,12 @@
   topNav.strokes = [{type: 'SOLID', color: {r: 0.9, g: 0.9, b: 0.95}}];
   topNav.strokeWeight = 1;
   const navItems = [
-    { name: "待審核上傳遺囑", active: false },
-    { name: "手動上傳 BundleA", active: true },
-    { name: "審核預覽／下載申請", active: false },
-    { name: "簽發 VC 管理", active: false },
-    { name: "死亡後解鎖", active: false },
-    { name: "系統設定", active: false }
+    { name: "Pending Wills for Review", active: false },
+    { name: "Manual Upload Will Package", active: true },
+    { name: "Review Preview/Download Requests", active: false },
+    { name: "Issued VC Management", active: false },
+    { name: "Post-Mortem Unlock", active: false },
+    { name: "System Settings", active: false }
   ];
   navItems.forEach(item => {
     const navItem = figma.createFrame();
@@ -159,9 +159,9 @@
   mainContent.itemSpacing = 24;
   mainContent.fills = [{type: 'SOLID', color: {r: 0.97, g: 0.98, b: 1}}];
 
-  // Upload BundleA Section (styled like Step 1 - File Upload)
+  // Upload Will Package Section (styled like Step 1 - File Upload)
   const uploadSection = figma.createFrame();
-  uploadSection.name = "Upload BundleA Section";
+  uploadSection.name = "Upload Will Package Section";
   uploadSection.layoutMode = 'VERTICAL';
   uploadSection.primaryAxisSizingMode = 'AUTO';
   uploadSection.counterAxisSizingMode = 'FIXED';
@@ -180,14 +180,14 @@
   const sectionTitle = figma.createText();
   sectionTitle.name = "Section Title";
   sectionTitle.fontName = {family: 'Inter', style: 'Bold'};
-  sectionTitle.characters = "上傳 BundleA";
+  sectionTitle.characters = "Upload Will Package";
   sectionTitle.fontSize = 28;
   sectionTitle.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
   uploadSection.appendChild(sectionTitle);
 
   // Upload Area
   const uploadArea = figma.createFrame();
-  uploadArea.name = "Upload BundleA Area";
+  uploadArea.name = "Upload Will Package Area";
   uploadArea.layoutMode = 'VERTICAL';
   uploadArea.primaryAxisSizingMode = 'AUTO';
   uploadArea.counterAxisSizingMode = 'FIXED';
@@ -217,13 +217,13 @@
   const uploadText = figma.createText();
   uploadText.name = "Upload Text";
   uploadText.fontName = {family: 'Inter', style: 'Medium'};
-  uploadText.characters = "點擊或拖曳上傳 BundleA JSON";
+  uploadText.characters = "Click or drag to upload Will Package JSON";
   uploadText.fontSize = 18;
   uploadText.fills = [{type: 'SOLID', color: {r: 0.23, g: 0.51, b: 1}}];
   const supportedFormats = figma.createText();
   supportedFormats.name = "Supported Formats";
   supportedFormats.fontName = {family: 'Inter', style: 'Regular'};
-  supportedFormats.characters = "支援：JSON";
+  supportedFormats.characters = "Supports: JSON";
   supportedFormats.fontSize = 14;
   supportedFormats.fills = [{type: 'SOLID', color: {r: 0.4, g: 0.4, b: 0.5}}];
   uploadArea.appendChild(uploadIcon);
@@ -252,8 +252,8 @@
   noteText.name = "Note Text";
   noteText.fontName = {family: 'Inter', style: 'Regular'};
   noteText.characters =
-    `• 若您在律師或其他管道收到一份 BundleA JSON，可透過此介面上傳，系統會自動結構化並讓您審核。
-• 上傳後就會與「待審核上傳遺囑 (Pending Bundles)」共用同一份列表，只是 status=\"pending_external\"，標籤不同以利辨識。`;
+    `• If you receive a Will Package JSON from a lawyer or other channels, you can upload it through this interface. The system will automatically structure it for your review.
+• After uploading, it will share the same list as 'Pending Wills for Review (Pending Bundles)', but with a different status='pending_external' tag for easy identification.`;
   noteText.fontSize = 14;
   noteText.lineHeight = {unit: 'PIXELS', value: 20};
   noteText.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];

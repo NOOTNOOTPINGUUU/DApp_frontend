@@ -47,7 +47,7 @@
   const logoText = figma.createText();
   logoText.name = "Logo Text";
   logoText.fontName = {family: 'Inter', style: 'Bold'};
-  logoText.characters = "數位遺囑系統 — 一般使用者";
+  logoText.characters = "Digital Will System — User";
   logoText.fontSize = 20;
   logoText.fills = [{type: 'SOLID', color: {r:0.1, g:0.1, b:0.2}}];
   logoSection.appendChild(logoIcon);
@@ -64,7 +64,7 @@
   const walletInfo = figma.createText();
   walletInfo.name = "Wallet Info";
   walletInfo.fontName = {family: 'Inter', style: 'Medium'};
-  walletInfo.characters = "已連結錢包：did:ethr:0xAAA…";
+  walletInfo.characters = "Connected Wallet: did:ethr:0xAAA…";
   walletInfo.fontSize = 14;
   walletInfo.fills = [{type: 'SOLID', color: {r:0.4, g:0.4, b:0.5}}];
   const logoutButton = figma.createFrame();
@@ -82,7 +82,7 @@
   const logoutText = figma.createText();
   logoutText.name = "Logout Text";
   logoutText.fontName = {family: 'Inter', style: 'Medium'};
-  logoutText.characters = "登出";
+  logoutText.characters = "Logout";
   logoutText.fontSize = 14;
   logoutText.fills = [{type: 'SOLID', color: {r:0.4, g:0.4, b:0.5}}];
   logoutButton.appendChild(logoutText);
@@ -116,10 +116,10 @@
 
   // Sidebar Menu Items
   const menuItems = [
-    { name: "撰寫並打包遺囑", active: false, icon: "📝" },
-    { name: "提出預覽／下載請求", active: true, icon: "👁️" },
-    { name: "我的請求狀態", active: false, icon: "📋" },
-    { name: "個人設定", active: false, icon: "⚙️" }
+    { name: "Compose and Package Will", active: false, icon: "📝" },
+    { name: "Request Preview/Download", active: true, icon: "👁️" },
+    { name: "My Request Status", active: false, icon: "📋" },
+    { name: "Personal Settings", active: false, icon: "⚙️" }
   ];
   menuItems.forEach(item => {
     const menuItem = figma.createFrame();
@@ -169,7 +169,7 @@
   const pageTitle = figma.createText();
   pageTitle.name = "Page Title";
   pageTitle.fontName = { family: 'Inter', style: 'Bold' };
-  pageTitle.characters = "提出預覽／下載請求 (Request Preview/Download)";
+  pageTitle.characters = "Request Preview/Download";
   pageTitle.fontSize = 28;
   pageTitle.fills = [{ type: 'SOLID', color: { r: 0.1, g: 0.1, b: 0.2 } }];
 
@@ -184,7 +184,7 @@
   const didLabel = figma.createText();
   didLabel.name = "DID Label";
   didLabel.fontName = { family: 'Inter', style: 'Medium' };
-  didLabel.characters = "目標 Testator DID：";
+  didLabel.characters = "Target Testator DID:";
   didLabel.fontSize = 16;
   didLabel.fills = [{ type: 'SOLID', color: { r: 0.1, g: 0.1, b: 0.2 } }];
   const didInput = figma.createFrame();
@@ -203,7 +203,7 @@
   const didPlaceholder = figma.createText();
   didPlaceholder.name = "DID Placeholder";
   didPlaceholder.fontName = { family: 'Inter', style: 'Regular' };
-  didPlaceholder.characters = "選擇或輸入 Testator DID";
+  didPlaceholder.characters = "Select or enter Testator DID";
   didPlaceholder.fontSize = 14;
   didPlaceholder.fills = [{ type: 'SOLID', color: { r: 0.6, g: 0.6, b: 0.65 } }];
   didInput.appendChild(didPlaceholder);
@@ -228,12 +228,12 @@
   const versionLabel = figma.createText();
   versionLabel.name = "Version Label";
   versionLabel.fontName = { family: 'Inter', style: 'Medium' };
-  versionLabel.characters = "版本：";
+  versionLabel.characters = "Version:";
   versionLabel.fontSize = 16;
   versionLabel.fills = [{ type: 'SOLID', color: { r: 0.1, g: 0.1, b: 0.2 } }];
   const versionInput = didInput.clone();
   versionInput.name = "Version Input";
-  versionInput.children[0].characters = "選擇版本號";
+  versionInput.children[0].characters = "Select version number";
   // Dropdown icon for Version input
   const versionDropdownIcon = figma.createNodeFromSvg(`
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
@@ -273,7 +273,7 @@
   const previewLabel = figma.createText();
   previewLabel.name = "Preview Label";
   previewLabel.fontName = { family: 'Inter', style: 'Regular' };
-  previewLabel.characters = "預覽";
+  previewLabel.characters = "Preview";
   previewLabel.fontSize = 16;
   previewLabel.fills = previewRadio.strokes;
   const downloadRadio = previewRadio.clone();
@@ -281,7 +281,7 @@
   downloadRadio.strokes = [{ type:'SOLID', color:{r:0.6,g:0.4,b:1}}];
   const downloadLabel = previewLabel.clone();
   downloadLabel.name = "Download Label";
-  downloadLabel.characters = "下載";
+  downloadLabel.characters = "Download";
   downloadLabel.fills = downloadRadio.strokes;
   typeSection.appendChild(previewRadio);
   typeSection.appendChild(previewLabel);
@@ -298,7 +298,7 @@
   const remarkLabel = figma.createText();
   remarkLabel.name = "Remark Label";
   remarkLabel.fontName = { family: 'Inter', style: 'Medium' };
-  remarkLabel.characters = "申請原因：";
+  remarkLabel.characters = "Reason for application:";
   remarkLabel.fontSize = 16;
   remarkLabel.fills = [{ type: 'SOLID', color: { r: 0.1, g: 0.1, b: 0.2 } }];
   const remarkInput = figma.createFrame();
@@ -318,7 +318,7 @@
   const remarkPlaceholder = figma.createText();
   remarkPlaceholder.name = "Remark Placeholder";
   remarkPlaceholder.fontName = { family: 'Inter', style: 'Regular' };
-  remarkPlaceholder.characters = "請填寫申請原因...";
+  remarkPlaceholder.characters = "Please fill in the reason for application...";
   remarkPlaceholder.fontSize = 14;
   remarkPlaceholder.fills = [{ type: 'SOLID', color: { r: 0.6, g: 0.6, b: 0.65 } }];
   remarkInput.appendChild(remarkPlaceholder);
@@ -342,7 +342,7 @@
   const submitText = figma.createText();
   submitText.name = "Submit Text";
   submitText.fontName = { family: 'Inter', style: 'Bold' };
-  submitText.characters = "提交申請";
+  submitText.characters = "Submit Request";
   submitText.fontSize = 16;
   submitText.fills = [{ type: 'SOLID', color: { r: 1, g: 1, b: 1 } }];
   submitButton.appendChild(submitText);

@@ -49,7 +49,7 @@
   const logoText = figma.createText();
   logoText.name = "Logo Text";
   logoText.fontName = {family: 'Inter', style: 'Bold'};
-  logoText.characters = "數位遺囑系統 — Notary";
+  logoText.characters = "Digital Will System — Notary";
   logoText.fontSize = 20;
   logoText.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
 
@@ -68,7 +68,7 @@
   const walletInfo = figma.createText();
   walletInfo.name = "Wallet Info";
   walletInfo.fontName = {family: 'Inter', style: 'Medium'};
-  walletInfo.characters = "已連結錢包：did:ethr:0xNotaryXYZ…";
+  walletInfo.characters = "Connected Wallet: did:ethr:0xNotaryXYZ…";
   walletInfo.fontSize = 14;
   walletInfo.fills = [{type: 'SOLID', color: {r: 0.4, g: 0.4, b: 0.5}}];
 
@@ -88,7 +88,7 @@
   const logoutText = figma.createText();
   logoutText.name = "Logout Text";
   logoutText.fontName = {family: 'Inter', style: 'Medium'};
-  logoutText.characters = "登出";
+  logoutText.characters = "Logout";
   logoutText.fontSize = 14;
   logoutText.fills = [{type: 'SOLID', color: {r: 0.4, g: 0.4, b: 0.5}}];
 
@@ -117,12 +117,12 @@
   topNav.strokeWeight = 1;
 
   const navItems = [
-    { name: "待審核上傳遺囑", active: false },
-    { name: "手動上傳 BundleA", active: false },
-    { name: "審核預覽／下載申請", active: false },
-    { name: "簽發 VC 管理", active: false },
-    { name: "死亡後解鎖", active: true },
-    { name: "系統設定", active: false }
+    { name: "Pending Wills for Review", active: false },
+    { name: "Manual Upload Will Package", active: false },
+    { name: "Review Preview/Download Requests", active: false },
+    { name: "Issued VC Management", active: false },
+    { name: "Post-Mortem Unlock", active: true },
+    { name: "System Settings", active: false }
   ];
 
   navItems.forEach(item => {
@@ -183,7 +183,7 @@
   const sectionTitle = figma.createText();
   sectionTitle.name = "Section Title";
   sectionTitle.fontName = {family: 'Inter', style: 'Bold'};
-  sectionTitle.characters = "待解鎖遺囑列表 (Pending Unlocks)";
+  sectionTitle.characters = "Pending Unlocks";
   sectionTitle.fontSize = 28;
   sectionTitle.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
 
@@ -221,8 +221,8 @@
 
   const headerCols = [
     {name: 'Testator DID', width: 220},
-    {name: '版本', width: 100},
-    {name: '狀態', width: 100}
+    {name: 'Version', width: 100},
+    {name: 'Status', width: 100}
   ];
 
   headerCols.forEach(col => {
@@ -353,14 +353,14 @@
   const panelTitle = figma.createText();
   panelTitle.name = "Panel Title";
   panelTitle.fontName = {family: 'Inter', style: 'Bold'};
-  panelTitle.characters = "操作區";
+  panelTitle.characters = "Operations Panel";
   panelTitle.fontSize = 24;
   panelTitle.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
 
   const selectedInfo = figma.createText();
   selectedInfo.name = "Selected Unlock";
   selectedInfo.fontName = {family: 'Inter', style: 'Medium'};
-  selectedInfo.characters = "已選擇：bnd-123";
+  selectedInfo.characters = "Selected: bnd-123";
   selectedInfo.fontSize = 16;
   selectedInfo.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
 
@@ -381,7 +381,7 @@
   const unlockText = figma.createText();
   unlockText.name = "Unlock Button Text";
   unlockText.fontName = {family: 'Inter', style: 'Medium'};
-  unlockText.characters = "解鎖並上傳明文";
+  unlockText.characters = "Unlock and Upload Plaintext";
   unlockText.fontSize = 16;
   unlockText.fills = [{type: 'SOLID', color: {r: 1, g: 1, b: 1}}];
 

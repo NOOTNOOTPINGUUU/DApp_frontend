@@ -48,7 +48,7 @@
   const logoText = figma.createText();
   logoText.name = "Logo Text";
   logoText.fontName = {family: 'Inter', style: 'Bold'};
-  logoText.characters = "數位遺囑系統 — 一般使用者";
+  logoText.characters = "Digital Will System — User";
   logoText.fontSize = 20;
   logoText.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
 
@@ -67,7 +67,7 @@
   const walletInfo = figma.createText();
   walletInfo.name = "Wallet Info";
   walletInfo.fontName = {family: 'Inter', style: 'Medium'};
-  walletInfo.characters = "已連結錢包：did:ethr:0xAAA…";
+  walletInfo.characters = "Connected Wallet: did:ethr:0xAAA…";
   walletInfo.fontSize = 14;
   walletInfo.fills = [{type: 'SOLID', color: {r: 0.4, g: 0.4, b: 0.5}}];
 
@@ -87,7 +87,7 @@
   const logoutText = figma.createText();
   logoutText.name = "Logout Text";
   logoutText.fontName = {family: 'Inter', style: 'Medium'};
-  logoutText.characters = "登出";
+  logoutText.characters = "Logout";
   logoutText.fontSize = 14;
   logoutText.fills = [{type: 'SOLID', color: {r: 0.4, g: 0.4, b: 0.5}}];
 
@@ -125,10 +125,10 @@
 
   // Sidebar Menu Items
   const menuItems = [
-    { name: "撰寫並打包遺囑", active: false, icon: "📝" },
-    { name: "提出預覽／下載請求", active: false, icon: "👁️" },
-    { name: "我的請求狀態", active: true, icon: "📋" },
-    { name: "個人設定", active: false, icon: "⚙️" }
+    { name: "Compose and Package Will", active: false, icon: "📝" },
+    { name: "Request Preview/Download", active: false, icon: "👁️" },
+    { name: "My Request Status", active: true, icon: "📋" },
+    { name: "Personal Settings", active: false, icon: "⚙️" }
   ];
 
   menuItems.forEach(item => {
@@ -182,7 +182,7 @@
   const pageTitle = figma.createText();
   pageTitle.name = "Page Title";
   pageTitle.fontName = {family: 'Inter', style: 'Bold'};
-  pageTitle.characters = "我的請求狀態 (My Requests)";
+  pageTitle.characters = "My Requests";
   pageTitle.fontSize = 28;
   pageTitle.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.1, b: 0.2}}];
 
@@ -222,11 +222,11 @@
   // Header Columns
   const headerColumns = [
     { name: "ID", width: 80 },
-    { name: "目標 Testator DID", width: 250 },
-    { name: "版本", width: 100 },
-    { name: "申請類型", width: 120 },
-    { name: "狀態", width: 120 },
-    { name: "操作", width: 378 }
+    { name: "Target Testator DID", width: 250 },
+    { name: "Version", width: 100 },
+    { name: "Request Type", width: 120 },
+    { name: "Status", width: 120 },
+    { name: "Action", width: 378 }
   ];
 
   headerColumns.forEach(column => {
@@ -389,7 +389,7 @@
     const typeText = figma.createText();
     typeText.name = "Type Text";
     typeText.fontName = {family: 'Inter', style: 'Medium'};
-    typeText.characters = request.type === 'preview' ? '預覽' : '下載';
+    typeText.characters = request.type === 'preview' ? 'Preview' : 'Download';
     typeText.fontSize = 12;
     typeText.fills = [{type: 'SOLID', color: request.type === 'preview' ? {r: 0.23, g: 0.51, b: 1} : {r: 0.6, g: 0.4, b: 1}}];
 
@@ -423,7 +423,7 @@
     const statusText = figma.createText();
     statusText.name = "Status Text";
     statusText.fontName = {family: 'Inter', style: 'Medium'};
-    statusText.characters = request.status === 'pending' ? '待審核' : request.status === 'approved' ? '已通過' : '已拒絕';
+    statusText.characters = request.status === 'pending' ? 'Pending' : request.status === 'approved' ? 'Approved' : 'Rejected';
     statusText.fontSize = 12;
     statusText.fills = [{type: 'SOLID', color: request.statusColor}];
 
@@ -469,7 +469,7 @@
       const actionText = figma.createText();
       actionText.name = "Action Text";
       actionText.fontName = {family: 'Inter', style: 'Medium'};
-      actionText.characters = request.type === 'preview' ? '下載 Preview VC' : '下載遺囑原文';
+      actionText.characters = request.type === 'preview' ? 'Download Preview VC' : 'Download Original Will';
       actionText.fontSize = 12;
       actionText.fills = [{type: 'SOLID', color: {r: 1, g: 1, b: 1}}];
 
@@ -480,7 +480,7 @@
       const rejectReason = figma.createText();
       rejectReason.name = "Reject Reason";
       rejectReason.fontName = {family: 'Inter', style: 'Regular'};
-      rejectReason.characters = "申請被拒絕，理由：資料不完整";
+      rejectReason.characters = "Request rejected, reason: Incomplete data";
       rejectReason.fontSize = 12;
       rejectReason.fills = [{type: 'SOLID', color: {r: 0.94, g: 0.26, b: 0.21}}];
 
@@ -489,7 +489,7 @@
       const pendingText = figma.createText();
       pendingText.name = "Pending Text";
       pendingText.fontName = {family: 'Inter', style: 'Regular'};
-      pendingText.characters = "等待 Notary 審核中...";
+      pendingText.characters = "Waiting for Notary review...";
       pendingText.fontSize = 12;
       pendingText.fills = [{type: 'SOLID', color: {r: 0.6, g: 0.45, b: 0.1}}];
 
@@ -529,7 +529,7 @@
   const noteText = figma.createText();
   noteText.name = "Note Text";
   noteText.fontName = {family: 'Inter', style: 'Regular'};
-  noteText.characters = "📋 申請狀態說明：\n• 已通過的 Preview 申請可下載 Preview VC，用於查看遺囑摘要\n• 已通過的 Download 申請可下載完整遺囑原文\n• 被拒絕的申請會顯示 Notary 填寫的拒絕原因";
+  noteText.characters = "📋 Request Status Description:\n• Approved Preview requests can download the Preview VC to view the will summary\n• Approved Download requests can download the full original will\n• Rejected requests will show the reason for rejection filled by the Notary";
   noteText.fontSize = 14;
   noteText.lineHeight = {unit: 'PIXELS', value: 20};
   noteText.fills = [{type: 'SOLID', color: {r: 0.1, g: 0.2, b: 0.4}}];
